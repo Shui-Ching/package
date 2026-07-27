@@ -4,42 +4,45 @@
 
 - **最後查詢時間**：2026-07-27
 - **資料來源**：npm registry（`npm view` / `registry.npmjs.org`）、GitHub 官方 API、nuxt.com 官方模組清單、jsDelivr API（`data.jsdelivr.com`）、各套件官方授權頁面
+- **表格欄位結構**：與團隊 Google Sheet（三個工作表：正常維護中／已停滯／授權疑慮）一致，固定為「套件（官網）、npm 套件名、目前用版本、最新版本、npm 最後發布、GitHub 最後更新、授權、狀態」八欄
+- **表格收錄範圍**：16 個核心套件，外加 2 個團隊實際引入的 Nuxt 模組（`nuxt-swiper`、`@samk-dev/nuxt-vcalendar`），列在各自對應的核心套件下方
 - **「目前用版本」欄位**：需要團隊成員依實際專案回填，本文件建立時尚未取得，先標記為「待補」
-- **「跨框架整合套件對照」章節**：因應公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件而新增，用來標註每個套件是否有「官方」維護的 Nuxt 模組或 Vue 整合套件（判定標準：需有明確證據，例如核心套件官方文件／README 直接連結、或發布在同一個 GitHub org／npm maintainer 底下、或 nuxt.com/modules 標註為 Official；純社群第三方維護者不列入，一律標記「無官方」）
-- **套件清單表格中的「Nuxt」「Vue」欄位**：上述判定結果的簡化版標示，✅ = 有官方支援，❌ = 無官方支援，－ = 不適用（套件本身即為 Vue 專屬元件庫，無需另外整合）；完整查證細節與逐項說明見下方「跨框架整合套件對照」章節
+- **「跨框架整合套件對照」章節**：因應公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件而新增，用來標註每個套件是否有「官方」維護的 Nuxt 模組或 Vue 整合套件（判定標準：需有明確證據，例如核心套件官方文件／README 直接連結、或發布在同一個 GitHub org／npm maintainer 底下、或 nuxt.com/modules 標註為 Official；純社群第三方維護者不列入，一律標記「無官方」）。上方套件清單不另設 Nuxt／Vue 欄位，整合狀況一律以該章節為準
 
 ## 套件清單
 
 ### ✅ 正常維護中
 
-| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | Nuxt | Vue | 狀態 |
-|---|---|---|---|---|---|---|---|---|---|
-| [SweetAlert2](https://sweetalert2.github.io/) | `sweetalert2` | 待補 | 11.26.25 | 2026-05-23 | 2026-07-20 | MIT | ❌ | ❌ | ✅ 正常，活躍維護 |
-| [Bootstrap](https://getbootstrap.com/) | `bootstrap` | 待補 | 5.3.8 | 2026-06-05 | 2026-07-26 | MIT | ❌ | ❌ | ✅ 正常，活躍維護 |
-| [Vue Quilly](https://vue-quilly.vercel.app/) | `vue-quilly` | 待補 | 1.1.6 | 2025-12-07 | 2026-03-23 | MIT | ❌ | － | ✅ 正常，但專案規模小、更新頻率較低，建議留意 |
-| [Quill](https://quilljs.com/) | `quill` | 待補 | 2.0.3 | 2024-11-30（近 1 年 8 個月未發版） | 2025-07-25 | BSD-3-Clause | ❌ | ❌ | ✅ 正常，但 npm 發版頻率低，建議留意（見下方說明） |
-| [Swiper](https://swiperjs.com/) | `swiper` | 待補 | 14.0.6 | 2026-07-22 | 2026-07-24 | MIT | ❌ | ✅ | ✅ 正常，非常活躍 |
-| [GSAP](https://gsap.com/) | `gsap` | 待補 | 3.15.0 | 2026-04-13 | 2026-04-13 | 自訂「Standard No Charge License」 | ❌ | ❌ | ✅ 授權特殊但確認可商用，見下方說明 |
-| [Apache ECharts](https://echarts.apache.org/) | `echarts` | 待補 | 6.1.0 | 2026-05-19 | 2026-07-26 | Apache-2.0 | ❌ | ✅ | ✅ 正常，Apache 基金會專案，非常活躍 |
-| [FullCalendar](https://fullcalendar.io/) | `fullcalendar` | 待補 | 7.0.2 | 2026-07-24 | 2026-07-24 | MIT | ❌ | ✅ | ✅ 正常，非常活躍 |
-| [GLightbox](https://biati-digital.github.io/glightbox/) | `glightbox` | 待補 | 3.3.1 | 2025-01-21 | 2025-12-02 | MIT | ❌ | ❌ | ✅ 正常，但 npm 發版頻率較低，建議留意 |
+| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | 狀態 |
+|---|---|---|---|---|---|---|---|
+| [SweetAlert2](https://sweetalert2.github.io/) | `sweetalert2` | 待補 | 11.26.25 | 2026-05-23 | 2026-07-20 | MIT | ✅ 正常，活躍維護 |
+| [Bootstrap](https://getbootstrap.com/) | `bootstrap` | 待補 | 5.3.8 | 2026-06-05 | 2026-07-26 | MIT | ✅ 正常，活躍維護 |
+| [Vue Quilly](https://vue-quilly.vercel.app/) | `vue-quilly` | 待補 | 1.1.6 | 2025-12-07 | 2026-03-23 | MIT | ✅ 正常，但專案規模小、更新頻率較低，建議留意 |
+| [Quill](https://quilljs.com/) | `quill` | 待補 | 2.0.3 | 2024-11-30（近 1 年 8 個月未發版） | 2025-07-25 | BSD-3-Clause | ✅ 正常，但 npm 發版頻率低，建議留意（見下方說明） |
+| [Swiper](https://swiperjs.com/) | `swiper` | 待補 | 14.0.6 | 2026-07-22 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
+| Nuxt Swiper（Swiper 的 Nuxt 模組，第三方 `@cpreston321` 維護） | `nuxt-swiper` | 2.0.2 | 2.0.2 | 2026-05-18 | 2026-07-27 | 待補 | ✅ 正常，維護活躍，但非 Swiper 官方模組（見下方對照章節） |
+| [GSAP](https://gsap.com/) | `gsap` | 待補 | 3.15.0 | 2026-04-13 | 2026-04-13 | 自訂「Standard No Charge License」 | ✅ 授權特殊但確認可商用，見下方說明 |
+| [Apache ECharts](https://echarts.apache.org/) | `echarts` | 待補 | 6.1.0 | 2026-05-19 | 2026-07-26 | Apache-2.0 | ✅ 正常，Apache 基金會專案，非常活躍 |
+| [FullCalendar](https://fullcalendar.io/) | `fullcalendar` | 待補 | 7.0.2 | 2026-07-24 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
+| [GLightbox](https://biati-digital.github.io/glightbox/) | `glightbox` | 待補 | 3.3.1 | 2025-01-21 | 2025-12-02 | MIT | ✅ 正常，但 npm 發版頻率較低，建議留意 |
 
 ### ⚠️ 已停滯（官方維護能量不足）
 
-| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | Nuxt | Vue | 狀態 |
-|---|---|---|---|---|---|---|---|---|---|
-| [AOS](https://michalsnik.github.io/aos/) | `aos` | 待補 | 2.3.4 | 2022-06-13（超過 4 年未發版） | 2024-03-26 | MIT | ❌ | ❌ | ⚠️ 已停滯，373 個未解決 issue |
-| [V-Calendar](https://vcalendar.io/) | `v-calendar` | 待補 | 2.4.2 | 2023-10-13（近 3 年未發版） | 2024-08-07 | MIT | ❌ | － | ⚠️ 已停滯，786 個未解決 issue |
-| [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup/) | `magnific-popup` | 待補 | 1.2.0 | 2024-06-08（超過 2 年未發版） | 2024-06-08 | MIT | ❌ | ❌ | ⚠️ 已停滯，678 個未解決 issue |
-| [EasyZoom](https://i-like-robots.github.io/EasyZoom/) | `easyzoom` | 待補 | 2.6.0 | 2022-12-30（超過 3 年未發版） | 2024-06-19 | MIT | ❌ | ❌ | ⚠️ 已停滯，超過 3 年未發版 |
-| [Animate.css](https://animate.style/) | `animate.css` | 待補 | 4.1.1 | 2020-09-07（超過 5 年未發版，見下方「npm 發布時間修正」說明） | 2024-07-29 | ⚠️ 見下方說明 | ❌ | ❌ | ⚠️ 已停滯 + 授權疑慮，見下方說明 |
-| [Flatpickr](https://flatpickr.js.org/) | `flatpickr` | 4.6.13 | 4.6.13 | 2022-04-14（超過 4 年未發版，見下方「npm 發布時間修正」說明） | 2024-08-02 | MIT | ❌ | ❌ | ⚠️ 已停滯，852 個未解決 issue |
+| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | 狀態 |
+|---|---|---|---|---|---|---|---|
+| [AOS](https://michalsnik.github.io/aos/) | `aos` | 待補 | 2.3.4 | 2022-06-13（超過 4 年未發版） | 2024-03-26 | MIT | ⚠️ 已停滯，373 個未解決 issue |
+| [V-Calendar](https://vcalendar.io/) | `v-calendar` | 待補 | 2.4.2 | 2023-10-13（近 3 年未發版） | 2024-08-07 | MIT | ⚠️ 已停滯，786 個未解決 issue |
+| Nuxt V-Calendar（V-Calendar 的 Nuxt 模組，第三方 `samk-dev` 維護） | `@samk-dev/nuxt-vcalendar` | 1.0.4 | 1.0.4 | 2024-07-13（近 2 年未發版） | 2024-07-30 | 待補 | ⚠️ 已停滯，維護狀態與核心套件 V-Calendar 一致 |
+| [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup/) | `magnific-popup` | 待補 | 1.2.0 | 2024-06-08（超過 2 年未發版） | 2024-06-08 | MIT | ⚠️ 已停滯，678 個未解決 issue |
+| [EasyZoom](https://i-like-robots.github.io/EasyZoom/) | `easyzoom` | 待補 | 2.6.0 | 2022-12-30（超過 3 年未發版） | 2024-06-19 | MIT | ⚠️ 已停滯，超過 3 年未發版 |
+| [Animate.css](https://animate.style/) | `animate.css` | 待補 | 4.1.1 | 2020-09-07（超過 5 年未發版，見下方「npm 發布時間修正」說明） | 2024-07-29 | ⚠️ 見下方說明 | ⚠️ 已停滯 + 授權疑慮，見下方說明 |
+| [Flatpickr](https://flatpickr.js.org/) | `flatpickr` | 4.6.13 | 4.6.13 | 2022-04-14（超過 4 年未發版，見下方「npm 發布時間修正」說明） | 2024-08-02 | MIT | ⚠️ 已停滯，852 個未解決 issue |
 
 ### ⚠️ 授權疑慮（維護狀態正常，但授權條款需留意）
 
-| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | Nuxt | Vue | 狀態 |
-|---|---|---|---|---|---|---|---|---|---|
-| [Fancybox](https://fancyapps.com/fancybox/) | `@fancyapps/ui` | 待補 | 6.1.14 | 2026-04-29 | 2026-04-29 | **非開源／需付費授權** | ❌ | ❌ | ⚠️ 高風險，見下方說明（維護仍活躍，問題出在授權而非停滯） |
+| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | 狀態 |
+|---|---|---|---|---|---|---|---|
+| [Fancybox](https://fancyapps.com/fancybox/) | `@fancyapps/ui` | 待補 | 6.1.14 | 2026-04-29 | 2026-04-29 | **非開源／需付費授權** | ⚠️ 高風險，見下方說明（維護仍活躍，問題出在授權而非停滯） |
 
 ## 跨框架整合套件對照（Nuxt／Vue／CDN via jsDelivr）
 
