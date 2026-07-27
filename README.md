@@ -16,6 +16,7 @@
 | [SweetAlert2](https://sweetalert2.github.io/) | `sweetalert2` | 待補 | 11.26.25 | 2026-05-23 | 2026-07-20 | MIT | ✅ 正常，活躍維護 |
 | [Bootstrap](https://getbootstrap.com/) | `bootstrap` | 待補 | 5.3.8 | 2026-06-05 | 2026-07-26 | MIT | ✅ 正常，活躍維護 |
 | [Vue Quilly](https://vue-quilly.vercel.app/) | `vue-quilly` | 待補 | 1.1.6 | 2025-12-07 | 2026-03-23 | MIT | ✅ 正常，但專案規模小、更新頻率較低，建議留意 |
+| [Quill](https://quilljs.com/) | `quill` | 待補 | 2.0.3 | 2024-11-30（近 1 年 8 個月未發版） | 2025-07-25 | BSD-3-Clause | ✅ 正常，但 npm 發版頻率低，建議留意（見下方說明） |
 | [Swiper](https://swiperjs.com/) | `swiper` | 待補 | 14.0.6 | 2026-07-22 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
 | [GSAP](https://gsap.com/) | `gsap` | 待補 | 3.15.0 | 2026-04-13 | 2026-04-13 | 自訂「Standard No Charge License」 | ✅ 授權特殊但確認可商用，見下方說明 |
 | [Apache ECharts](https://echarts.apache.org/) | `echarts` | 待補 | 6.1.0 | 2026-05-19 | 2026-07-26 | Apache-2.0 | ✅ 正常，Apache 基金會專案，非常活躍 |
@@ -41,20 +42,21 @@
 
 ## 跨框架整合套件對照（Nuxt／Vue／CDN via jsDelivr）
 
-公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件，下表整理每個套件在這四種引入方式下的實際狀況。**結論先講**：15 個套件裡，沒有任何一個擁有官方維護的 Nuxt 模組；Vue 官方整合套件也只有 Apache ECharts、FullCalendar 兩個成立，其餘全部是社群第三方維護，依前述嚴格判定標準不列為官方。CDN via jsDelivr 部分，15 個套件全數可透過 jsDelivr 正常取用，但**jsDelivr 本質是 npm 套件的鏡像 CDN，沒有獨立版本號與更新排程**，通常 npm 發布新版後幾分鐘到數小時內會自動同步，因此下表 CDN 欄位不重複列版本號，只註記「跟隨 npm」。
+公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件，下表整理每個套件在這四種引入方式下的實際狀況。**結論先講**：16 個套件裡，沒有任何一個擁有官方維護的 Nuxt 模組；Vue 官方整合套件也只有 Apache ECharts、FullCalendar 兩個成立，其餘全部是社群第三方維護，依前述嚴格判定標準不列為官方。CDN via jsDelivr 部分，16 個套件全數可透過 jsDelivr 正常取用，但**jsDelivr 本質是 npm 套件的鏡像 CDN，沒有獨立版本號與更新排程**，通常 npm 發布新版後幾分鐘到數小時內會自動同步，因此下表 CDN 欄位不重複列版本號，只註記「跟隨 npm」。
 
 | 套件 | Nuxt 官方模組 | Vue 官方整合套件 | CDN via jsDelivr |
 |---|---|---|---|
 | SweetAlert2 | 無官方模組 | 無官方整合套件（官方 README 僅列出 React／Angular／Laravel 三個官方整合，`vue-sweetalert2` 屬社群套件） | 可用，跟隨 npm 11.26.25 |
 | Bootstrap | 無官方模組 | 無官方整合套件（BootstrapVue／BootstrapVueNext 為獨立社群專案，非 twbs 官方組織維護，且已停止支援 Vue 3） | 可用，跟隨 npm 5.3.8 |
 | Vue Quilly | 無官方模組（README 中的「Nuxt Integration」連結僅為 SSR 設定範例專案，未發布成 npm 套件） | 不適用（本身即為 Vue 專屬元件庫） | 可用，跟隨 npm 1.1.6 |
-| Swiper | 無官方模組（nuxt.com 上架的 `nuxt-swiper` 官方頁面明確標示為第三方 `@cpreston321` 維護） | 已內建於核心套件（`swiper/vue` entry point 為官方文件指定用法，非獨立套件，版本與核心套件 14.0.6 一致） | 可用，跟隨 npm 14.0.6 |
+| Swiper | 無官方模組（nuxt.com 上架的 `nuxt-swiper` 官方頁面明確標示為第三方 `@cpreston321` 維護；npm 最新 2.0.2，2026-05-18 發布，GitHub 最後更新 2026-07-27，維護活躍） | 已內建於核心套件（`swiper/vue` entry point 為官方文件指定用法，非獨立套件，版本與核心套件 14.0.6 一致） | 可用，跟隨 npm 14.0.6 |
+| Quill | 無官方模組 | 無官方整合套件（官方僅提供 vanilla JS API；團隊使用的 `vue-quilly` 為第三方 `alekswebnet` 維護，非 Quill 官方 org `slab`，另見上方 Vue Quilly 專列） | 可用，跟隨 npm 2.0.3 |
 | GSAP | 無官方模組 | 無官方整合套件（官方僅發布 `@gsap/react`，官方文件明確說明「there isn't an official @gsap/vue package」） | 可用，跟隨 npm 3.15.0 |
 | Apache ECharts | 無官方模組（`nuxt-echarts` 為個人維護，非 apache／ecomfe 組織） | ✅ 有 —— `vue-echarts` 8.0.1（GitHub `ecomfe/vue-echarts`，`apache/echarts` 官方 README 直接連結背書；GitHub 最後更新 2026-07-24） | 可用，`echarts`、`vue-echarts` 皆跟隨各自 npm 版本 |
 | FullCalendar | 無官方模組（官方文件僅提供 Nuxt 設定範例 repo，非正式模組） | ✅ 有 —— `@fullcalendar/vue3`，npm 最新 7.0.2，同屬官方 GitHub org `fullcalendar`（⚠️ 版本落差，見下方說明） | 可用，跟隨各自 npm 版本 |
 | GLightbox | 無官方模組 | 無官方整合套件 | 可用，跟隨 npm 3.3.1 |
 | AOS | 無官方模組（`nuxt-aos` 為第三方維護） | 無官方整合套件（`aos-vue` 為第三方維護） | 可用，跟隨 npm 2.3.4 |
-| V-Calendar | 無官方模組（`@samk-dev/nuxt-vcalendar` 為第三方維護，非作者 `nathanreyes` 本人） | 不適用（本身即為 Vue 專屬元件庫） | 可用，跟隨 npm 2.4.2 |
+| V-Calendar | 無官方模組（`@samk-dev/nuxt-vcalendar` 為第三方維護，非作者 `nathanreyes` 本人；npm 最新 1.0.4，2024-07-13 發布，近 2 年未更新，GitHub 最後更新同為 2024-07-30，維護狀態與核心套件 V-Calendar 一致停滯） | 不適用（本身即為 Vue 專屬元件庫） | 可用，跟隨 npm 2.4.2 |
 | Magnific Popup | 無官方模組 | 無官方整合套件 | 可用，跟隨 npm 1.2.0 |
 | EasyZoom | 無官方模組 | 無官方整合套件 | 可用，跟隨 npm 2.6.0 |
 | Animate.css | 無官方模組（社群 `nuxt-animate.css` 非官方 org 維護） | 無官方整合套件（`vue-animate-css`、`vue3-animate-css` 皆為個人套件，且分別已 10 年、4 年未更新） | 可用，跟隨 npm 4.1.1 |
@@ -102,6 +104,10 @@
 ### ℹ️ GSAP —— 授權文字非標準 MIT，但確認可商用
 
 GSAP 官方 [授權頁面](https://gsap.com/licensing/) 說明目前所有外掛（含過去付費的 SplitText、MorphSVG）皆已納入免費標準授權，商業用途、SaaS 產品都涵蓋在內。唯一限制是不能用來開發與 Webflow 競爭的視覺化動畫建構工具，與一般前端專案使用情境無關。若原碼掃描工具因授權文字非標準 SPDX 格式而標記為風險，屬於誤報，可備註說明。
+
+### ℹ️ Quill —— npm 發版頻率低，但 GitHub 原始碼持續開發中；授權與 Vue Quilly 不同（皆屬寬鬆開源，無疑慮）
+
+Quill（`quill`，團隊透過 Vue Quilly 間接使用的底層編輯器引擎）npm 最後一次發版是 2024-11-30（近 1 年 8 個月未發版），單看這個數字容易誤判為停滯套件。但查證 GitHub `slab/quill` repo 發現最後一次程式碼異動是 2025-07-25，且 repo 未封存，代表官方仍持續開發，只是尚未把累積的變更打包發布新版，與 AOS、Flatpickr 那種「GitHub 也一起停滯」的情況不同，建議列為正常維護但留意，而非直接歸類已停滯。另外，Quill 本身授權為 **BSD-3-Clause**，與 Vue Quilly 的 **MIT** 不同，但兩者都是標準寬鬆式開源授權，商業使用無限制，授權層面沒有疑慮，僅供掃描工具比對授權欄位時參考。
 
 ## 如何更新這份表格
 
