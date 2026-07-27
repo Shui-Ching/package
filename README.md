@@ -8,20 +8,32 @@
 
 ## 套件清單
 
+### ✅ 正常維護中
+
 | 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | 狀態 |
 |---|---|---|---|---|---|---|---|
 | [SweetAlert2](https://sweetalert2.github.io/) | `sweetalert2` | 待補 | 11.26.25 | 2026-05-23 | 2026-07-20 | MIT | ✅ 正常，活躍維護 |
 | [Bootstrap](https://getbootstrap.com/) | `bootstrap` | 待補 | 5.3.8 | 2026-06-05 | 2026-07-26 | MIT | ✅ 正常，活躍維護 |
 | [Vue Quilly](https://vue-quilly.vercel.app/) | `vue-quilly` | 待補 | 1.1.6 | 2025-12-07 | 2026-03-23 | MIT | ✅ 正常，但專案規模小、更新頻率較低，建議留意 |
-| [Fancybox](https://fancyapps.com/fancybox/) | `@fancyapps/ui` | 待補 | 6.1.14 | 2026-04-29 | 2026-04-29 | **非開源／需付費授權** | ⚠️ 高風險，見下方說明 |
-| [AOS](https://michalsnik.github.io/aos/) | `aos` | 待補 | 2.3.4 | 2022-06-13（超過 4 年未發版） | 2024-03-26 | MIT | ⚠️ 已停滯，373 個未解決 issue |
 | [Swiper](https://swiperjs.com/) | `swiper` | 待補 | 14.0.6 | 2026-07-22 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
-| [V-Calendar](https://vcalendar.io/) | `v-calendar` | 待補 | 2.4.2 | 2023-10-13（近 3 年未發版） | 2024-08-07 | MIT | ⚠️ 已停滯，786 個未解決 issue |
 | [GSAP](https://gsap.com/) | `gsap` | 待補 | 3.15.0 | 2026-04-13 | 2026-04-13 | 自訂「Standard No Charge License」 | ✅ 授權特殊但確認可商用，見下方說明 |
 | [Apache ECharts](https://echarts.apache.org/) | `echarts` | 待補 | 6.1.0 | 2026-05-19 | 2026-07-26 | Apache-2.0 | ✅ 正常，Apache 基金會專案，非常活躍 |
+
+### ⚠️ 已停滯（官方維護能量不足）
+
+| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | 狀態 |
+|---|---|---|---|---|---|---|---|
+| [AOS](https://michalsnik.github.io/aos/) | `aos` | 待補 | 2.3.4 | 2022-06-13（超過 4 年未發版） | 2024-03-26 | MIT | ⚠️ 已停滯，373 個未解決 issue |
+| [V-Calendar](https://vcalendar.io/) | `v-calendar` | 待補 | 2.4.2 | 2023-10-13（近 3 年未發版） | 2024-08-07 | MIT | ⚠️ 已停滯，786 個未解決 issue |
 | [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup/) | `magnific-popup` | 待補 | 1.2.0 | 2024-06-08（超過 2 年未發版） | 2024-06-08 | MIT | ⚠️ 已停滯，678 個未解決 issue |
 | [EasyZoom](https://i-like-robots.github.io/EasyZoom/) | `easyzoom` | 待補 | 2.6.0 | 2022-12-30（超過 3 年未發版） | 2024-06-19 | MIT | ⚠️ 已停滯，超過 3 年未發版 |
 | [Animate.css](https://animate.style/) | `animate.css` | 待補 | 4.1.1 | 2022-11-18（超過 3 年未發版） | 2024-07-29 | ⚠️ 見下方說明 | ⚠️ 已停滯 + 授權疑慮，見下方說明 |
+
+### ⚠️ 授權疑慮（維護狀態正常，但授權條款需留意）
+
+| 套件（官網） | npm 套件名 | 目前用版本 | 最新版本 | npm 最後發布 | GitHub 最後更新 | 授權 | 狀態 |
+|---|---|---|---|---|---|---|---|
+| [Fancybox](https://fancyapps.com/fancybox/) | `@fancyapps/ui` | 待補 | 6.1.14 | 2026-04-29 | 2026-04-29 | **非開源／需付費授權** | ⚠️ 高風險，見下方說明（維護仍活躍，問題出在授權而非停滯） |
 
 ## 風險與注意事項
 
