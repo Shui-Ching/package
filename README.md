@@ -18,6 +18,8 @@
 | [Swiper](https://swiperjs.com/) | `swiper` | 待補 | 14.0.6 | 2026-07-22 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
 | [GSAP](https://gsap.com/) | `gsap` | 待補 | 3.15.0 | 2026-04-13 | 2026-04-13 | 自訂「Standard No Charge License」 | ✅ 授權特殊但確認可商用，見下方說明 |
 | [Apache ECharts](https://echarts.apache.org/) | `echarts` | 待補 | 6.1.0 | 2026-05-19 | 2026-07-26 | Apache-2.0 | ✅ 正常，Apache 基金會專案，非常活躍 |
+| [FullCalendar](https://fullcalendar.io/) | `fullcalendar` | 待補 | 7.0.2 | 2026-07-24 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
+| [GLightbox](https://biati-digital.github.io/glightbox/) | `glightbox` | 待補 | 3.3.1 | 2025-01-21 | 2025-12-02 | MIT | ✅ 正常，但 npm 發版頻率較低，建議留意 |
 
 ### ⚠️ 已停滯（官方維護能量不足）
 
@@ -28,6 +30,7 @@
 | [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup/) | `magnific-popup` | 待補 | 1.2.0 | 2024-06-08（超過 2 年未發版） | 2024-06-08 | MIT | ⚠️ 已停滯，678 個未解決 issue |
 | [EasyZoom](https://i-like-robots.github.io/EasyZoom/) | `easyzoom` | 待補 | 2.6.0 | 2022-12-30（超過 3 年未發版） | 2024-06-19 | MIT | ⚠️ 已停滯，超過 3 年未發版 |
 | [Animate.css](https://animate.style/) | `animate.css` | 待補 | 4.1.1 | 2022-11-18（超過 3 年未發版） | 2024-07-29 | ⚠️ 見下方說明 | ⚠️ 已停滯 + 授權疑慮，見下方說明 |
+| [Flatpickr](https://flatpickr.js.org/) | `flatpickr` | 4.6.13 | 4.6.13 | 2022-06-18（超過 4 年未發版） | 2024-08-02 | MIT | ⚠️ 已停滯，852 個未解決 issue |
 
 ### ⚠️ 授權疑慮（維護狀態正常，但授權條款需留意）
 
@@ -47,9 +50,9 @@
 
 若團隊目前是直接引用但尚未購買授權，屬於實際法遵風險，建議優先跟法務／PM 確認授權狀態。如需替換，MIT 授權的同類型 lightbox 套件（例如 GLightbox、PhotoSwipe）可列入評估。
 
-### ⚠️ AOS、V-Calendar、Magnific Popup、EasyZoom、Animate.css —— 維護停滯風險
+### ⚠️ AOS、V-Calendar、Magnific Popup、EasyZoom、Animate.css、Flatpickr —— 維護停滯風險
 
-這五個套件最後一次 npm 發版都超過一年（AOS 已逾 4 年、V-Calendar 近 3 年、Magnific Popup 超過 2 年、EasyZoom 與 Animate.css 皆超過 3 年），代表官方維護能量可能不足，長期使用有安全性更新跟不上的風險。其中 AOS、V-Calendar、Magnific Popup 三者 GitHub 上待處理 issue 數量偏高（分別為 373、786、678 個）；EasyZoom 待處理 issue 僅 8 個，數量不高，但也已超過 3 年沒有新版發布，同樣建議列入觀察。建議團隊評估是否需要尋找替代方案（例如 Magnific Popup、EasyZoom 可考慮 PhotoSwipe 等仍活躍的同類套件），或接受此風險並列管觀察。
+這六個套件最後一次 npm 發版都超過一年（AOS 已逾 4 年、V-Calendar 近 3 年、Magnific Popup 超過 2 年、EasyZoom、Animate.css 與 Flatpickr 皆超過 3 年），代表官方維護能量可能不足，長期使用有安全性更新跟不上的風險。其中 AOS、V-Calendar、Magnific Popup、Flatpickr 四者 GitHub 上待處理 issue 數量偏高（分別為 373、786、678、852 個）；EasyZoom 待處理 issue 僅 8 個，數量不高，但也已超過 3 年沒有新版發布，同樣建議列入觀察。建議團隊評估是否需要尋找替代方案（例如 Magnific Popup、EasyZoom 可考慮 PhotoSwipe 等仍活躍的同類套件；Flatpickr 可考慮仍活躍維護的 Vanilla Calendar Pro 或 Cally 等日期選擇器套件），或接受此風險並列管觀察。
 
 ### ⚠️ Animate.css —— GitHub 原始碼授權已改為 Hippocratic License 2.1，與目前 npm 發布版本的 MIT 不一致
 
