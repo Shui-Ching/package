@@ -20,7 +20,7 @@
 | [Vue Quilly](https://vue-quilly.vercel.app/) | `vue-quilly` | 待補 | 1.1.6 | 2025-12-07 | 2026-03-23 | MIT | ✅ 正常，但專案規模小、更新頻率較低，建議留意 |
 | [Quill](https://quilljs.com/) | `quill` | 待補 | 2.0.3 | 2024-11-30（近 1 年 8 個月未發版） | 2025-07-25 | BSD-3-Clause | ✅ 正常，但 npm 發版頻率低，建議留意（見下方說明） |
 | [Swiper](https://swiperjs.com/) | `swiper` | 待補 | 14.0.6 | 2026-07-22 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
-| Nuxt Swiper（Swiper 的 Nuxt 模組，第三方 `@cpreston321` 維護） | `nuxt-swiper` | 2.0.2 | 2.0.2 | 2026-05-18 | 2026-07-27 | 待補 | ✅ 正常，維護活躍，但非 Swiper 官方模組（見下方對照章節） |
+| [Nuxt Swiper](https://github.com/cpreston321/nuxt-swiper)（Swiper 的 Nuxt 模組，第三方 `@cpreston321` 維護） | `nuxt-swiper` | 2.0.2 | 2.0.2 | 2026-05-18 | 2026-07-27 | 待補 | ✅ 正常，維護活躍，但非 Swiper 官方模組（見下方對照章節） |
 | [GSAP](https://gsap.com/) | `gsap` | 待補 | 3.15.0 | 2026-04-13 | 2026-04-13 | 自訂「Standard No Charge License」 | ✅ 授權特殊但確認可商用，見下方說明 |
 | [Apache ECharts](https://echarts.apache.org/) | `echarts` | 待補 | 6.1.0 | 2026-05-19 | 2026-07-26 | Apache-2.0 | ✅ 正常，Apache 基金會專案，非常活躍 |
 | [FullCalendar](https://fullcalendar.io/) | `fullcalendar` | 待補 | 7.0.2 | 2026-07-24 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
@@ -32,7 +32,7 @@
 |---|---|---|---|---|---|---|---|
 | [AOS](https://michalsnik.github.io/aos/) | `aos` | 待補 | 2.3.4 | 2022-06-13（超過 4 年未發版） | 2024-03-26 | MIT | ⚠️ 已停滯，373 個未解決 issue |
 | [V-Calendar](https://vcalendar.io/) | `v-calendar` | 待補 | 2.4.2 | 2023-10-13（近 3 年未發版） | 2024-08-07 | MIT | ⚠️ 已停滯，786 個未解決 issue |
-| Nuxt V-Calendar（V-Calendar 的 Nuxt 模組，第三方 `samk-dev` 維護） | `@samk-dev/nuxt-vcalendar` | 1.0.4 | 1.0.4 | 2024-07-13（近 2 年未發版） | 2024-07-30 | 待補 | ⚠️ 已停滯，維護狀態與核心套件 V-Calendar 一致 |
+| [Nuxt V-Calendar](https://github.com/samk-dev/nuxt-vcalendar)（V-Calendar 的 Nuxt 模組，第三方 `samk-dev` 維護） | `@samk-dev/nuxt-vcalendar` | 1.0.4 | 1.0.4 | 2024-07-13（近 2 年未發版） | 2024-07-30 | 待補 | ⚠️ 已停滯，維護狀態與核心套件 V-Calendar 一致 |
 | [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup/) | `magnific-popup` | 待補 | 1.2.0 | 2024-06-08（超過 2 年未發版） | 2024-06-08 | MIT | ⚠️ 已停滯，678 個未解決 issue |
 | [EasyZoom](https://i-like-robots.github.io/EasyZoom/) | `easyzoom` | 待補 | 2.6.0 | 2022-12-30（超過 3 年未發版） | 2024-06-19 | MIT | ⚠️ 已停滯，超過 3 年未發版 |
 | [Animate.css](https://animate.style/) | `animate.css` | 待補 | 4.1.1 | 2020-09-07（超過 5 年未發版，見下方「npm 發布時間修正」說明） | 2024-07-29 | ⚠️ 見下方說明 | ⚠️ 已停滯 + 授權疑慮，見下方說明 |
