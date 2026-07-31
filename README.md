@@ -125,6 +125,25 @@ GSAP 官方 [授權頁面](https://gsap.com/licensing/) 說明目前所有外掛
 
 Quill（`quill`，團隊透過 Vue Quilly 間接使用的底層編輯器引擎）npm 最後一次發版是 2024-11-30（近 1 年 8 個月未發版），單看這個數字容易誤判為停滯套件。但查證 GitHub `slab/quill` repo 發現最後一次程式碼異動是 2025-07-25，且 repo 未封存，代表官方仍持續開發，只是尚未把累積的變更打包發布新版，與 AOS、Flatpickr 那種「GitHub 也一起停滯」的情況不同，建議列為正常維護但留意，而非直接歸類已停滯。另外，Quill 本身授權為 **BSD-3-Clause**，與 Vue Quilly 的 **MIT** 不同，但兩者都是標準寬鬆式開源授權，商業使用無限制，授權層面沒有疑慮，僅供掃描工具比對授權欄位時參考。
 
+### 💡 開源免費替代方案建議（供評估，非現況異動）
+
+以下為「已停滯」與「授權疑慮」共 8 個套件的開源免費替代方案，查證時間 2026-07-31，方法同上（`npm registry` + GitHub API）。這裡只列建議，不代表團隊已經決定更換，實際導入前建議先評估既有程式碼的相依範圍與改寫成本。
+
+**先合併再新增**：Magnific Popup、EasyZoom、Vue Easy Lightbox、Fancybox 這四個套件的核心需求（燈箱展示、局部放大）高度重疊，建議先評估合併到團隊已在「正常維護中」清單裡的 GLightbox，減少套件數量；只有 Fancybox 那種進階畫廊手勢功能 GLightbox 未涵蓋時，才需要額外引入 PhotoSwipe。AOS 的捲動動畫需求，也可以直接用團隊已導入的 GSAP 內建 ScrollTrigger 外掛達成，不需要新增依賴。
+
+| 原套件 | 問題 | 建議替代方案 | npm 套件名 | 授權 | 最新版本／npm 發布日 | GitHub 最後更新 | 待處理 issue |
+|---|---|---|---|---|---|---|---|
+| AOS | 已停滯逾 4 年 | [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)（團隊已導入 GSAP，為其內建 plugin，無需新增依賴） | 隨 `gsap` | 自訂授權，已確認可商用 | 3.15.0／2026-04-13 | 2026-04-13 | — |
+| Magnific Popup | 已停滯逾 2 年 | [GLightbox](https://biati-digital.github.io/glightbox/)（團隊已在「正常維護中」清單） | `glightbox` | MIT | 3.3.1 | 2025-12-02 | — |
+| Vue Easy Lightbox | 已停滯 | 同上，改用 [GLightbox](https://biati-digital.github.io/glightbox/) | `glightbox` | MIT | 3.3.1 | 2025-12-02 | — |
+| Fancybox | 付費授權，不可用於開源專案 | 優先評估改用 GLightbox；若需要 Fancybox 等級的畫廊與縮放手勢，改用 [PhotoSwipe](https://github.com/dimsemenov/Photoswipe) | `photoswipe` | MIT | 5.4.4／2024-05-24 | 2025-12-04 | 169（星數 2.5 萬，用量大屬業界標準，核心功能已穩定，非棄置） |
+| EasyZoom | 已停滯逾 3 年 | [medium-zoom](https://github.com/francoischalifour/medium-zoom) | `medium-zoom` | MIT | 1.1.0／2023-11-16 | 2025-12-20 | 49 |
+| V-Calendar／Nuxt V-Calendar | 已停滯近 3 年 | [@vuepic/vue-datepicker](https://github.com/Vuepic/vue-datepicker)（Vue 3 專用，維護活躍） | `@vuepic/vue-datepicker` | MIT | 14.0.0／2026-06-02 | 2026-07-08 | 10 |
+| Flatpickr | 已停滯逾 4 年 | [vanilla-calendar-pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) 或 [cally](https://github.com/WickyNilliams/cally)（Web Component，框架無關，符合公司 Nuxt／Vue／CDN 多種引入方式） | `vanilla-calendar-pro` 或 `cally` | MIT | 3.1.0／2026-01-09（vanilla-calendar-pro）、0.9.2／2026-02-05（cally） | 2026-07-01、2026-07-10 | 18、15 |
+| Animate.css | GitHub 原始碼授權已改 Hippocratic License 2.1（npm 上目前版本仍為 MIT） | 短期無需更換，鎖定現有 npm 4.1.1（MIT）版本即可；中長期若要徹底避開授權疑慮，可評估改用團隊已導入的 [GSAP](https://gsap.com/) 改寫動畫觸發邏輯 | — | — | — | — | — |
+
+另外查證時發現一個常見的 EasyZoom 替代方案 **[drift-zoom](https://github.com/strawdynamics/drift)** 已改名搬到 `strawdynamics/drift`，最後一次 GitHub 更新是 2024-06-28，距今超過 2 年，本身也屬於停滯狀態，因此未列入上表推薦選項。
+
 ## 如何更新這份表格
 
 為避免資料手動維護後跟實際套件狀態脫鉤，建議定期（例如每季）用以下指令重新查詢，而不是憑印象修改：
