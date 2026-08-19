@@ -5,7 +5,7 @@
 - **最後查詢時間**：2026-07-28
 - **資料來源**：npm registry（`npm view` / `registry.npmjs.org`）、GitHub 官方 API、nuxt.com 官方模組清單、jsDelivr API（`data.jsdelivr.com`）、各套件官方授權頁面
 - **表格欄位結構**：以團隊 Google Sheet（三個工作表：正常維護中／已停滯／授權疑慮）的八欄「套件（官網）、npm 套件名、目前用版本、最新版本、npm 最後發布、GitHub 最後更新、授權、狀態」為基礎，另新增「功能描述」欄（放在「套件（官網）」之後），共九欄，方便快速辨識每個套件的用途
-- **表格收錄範圍**：17 個核心套件，外加 2 個團隊實際引入的 Nuxt 模組（`nuxt-swiper`、`@samk-dev/nuxt-vcalendar`），列在各自對應的核心套件下方
+- **表格收錄範圍**：18 個核心套件，外加 2 個團隊實際引入的 Nuxt 模組（`nuxt-swiper`、`@samk-dev/nuxt-vcalendar`），列在各自對應的核心套件下方
 - **「目前用版本」欄位**：需要團隊成員依實際專案回填，本文件建立時尚未取得，先標記為「待補」
 - **「跨框架整合套件對照」章節**：因應公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件而新增，用來標註每個套件是否有「官方」維護的 Nuxt 模組或 Vue 整合套件（判定標準：需有明確證據，例如核心套件官方文件／README 直接連結、或發布在同一個 GitHub org／npm maintainer 底下、或 nuxt.com/modules 標註為 Official；純社群第三方維護者不列入，一律標記「無官方」）。上方套件清單不另設 Nuxt／Vue 欄位，整合狀況一律以該章節為準
 
@@ -38,6 +38,7 @@
 | [Animate.css](https://animate.style/) | 純 CSS 動畫效果類別庫，套用預設 class 即可讓元素套用動畫效果 | `animate.css` | 待補 | 4.1.1 | 2020-09-07（超過 5 年未發版，見下方「npm 發布時間修正」說明） | 2024-07-29 | ⚠️ 見下方說明 | ⚠️ 已停滯 + 授權疑慮，見下方說明 |
 | [Flatpickr](https://flatpickr.js.org/) | 輕量日期／時間選擇器，無其他相依套件，支援多種日期格式與範圍選取 | `flatpickr` | 4.6.13 | 4.6.13 | 2022-04-14（超過 4 年未發版，見下方「npm 發布時間修正」說明） | 2024-08-02 | MIT | ⚠️ 已停滯，852 個未解決 issue |
 | [Vue Easy Lightbox](https://onycat.com/vue-easy-lightbox/) | Vue 3 圖片燈箱（lightbox）元件，支援縮放、拖曳、旋轉與多圖切換 | `vue-easy-lightbox` | 待補 | 1.19.0 | 2024-03-05（近 2 年 5 個月未發版） | 2024-04-03 | MIT | ⚠️ 已停滯，GitHub 亦逾 2 年無 commit，2026 年的社群修正 PR 未被處理（見下方說明） |
+| [Isotope](https://isotope.metafizzy.co/) | 網格版面篩選、排序與動態佈局函式庫，支援 masonry（不同高度自動填補間隙）等多種版面模式 | `isotope-layout` | 待補 | 3.0.6 | 2018-04-06（超過 8 年未發版） | 2021-09-24（超過 4 年未更新） | ⚠️ 見下方說明 | ⚠️ 已停滯 + 授權疑慮，見下方說明 |
 
 ### ⚠️ 授權疑慮（維護狀態正常，但授權條款需留意）
 
@@ -47,7 +48,7 @@
 
 ## 跨框架整合套件對照（Nuxt／Vue／CDN via jsDelivr）
 
-公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件，下表整理每個套件在這四種引入方式下的實際狀況。**結論先講**：17 個套件裡，沒有任何一個擁有官方維護的 Nuxt 模組；Vue 官方整合套件也只有 Apache ECharts、FullCalendar 兩個成立，其餘全部是社群第三方維護，依前述嚴格判定標準不列為官方。CDN via jsDelivr 部分，17 個套件全數可透過 jsDelivr 正常取用，但**jsDelivr 本質是 npm 套件的鏡像 CDN，沒有獨立版本號與更新排程**，通常 npm 發布新版後幾分鐘到數小時內會自動同步，因此下表 CDN 欄位不重複列版本號，只註記「跟隨 npm」。
+公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件，下表整理每個套件在這四種引入方式下的實際狀況。**結論先講**：18 個套件裡，沒有任何一個擁有官方維護的 Nuxt 模組；Vue 官方整合套件也只有 Apache ECharts、FullCalendar 兩個成立，其餘全部是社群第三方維護，依前述嚴格判定標準不列為官方。CDN via jsDelivr 部分，18 個套件全數可透過 jsDelivr 正常取用，但**jsDelivr 本質是 npm 套件的鏡像 CDN，沒有獨立版本號與更新排程**，通常 npm 發布新版後幾分鐘到數小時內會自動同步，因此下表 CDN 欄位不重複列版本號，只註記「跟隨 npm」。
 
 | 套件 | Nuxt 官方模組 | Vue 官方整合套件 | CDN via jsDelivr |
 |---|---|---|---|
@@ -67,6 +68,7 @@
 | Animate.css | 無官方模組（社群 `nuxt-animate.css` 非官方 org 維護） | 無官方整合套件（`vue-animate-css`、`vue3-animate-css` 皆為個人套件，且分別已 10 年、4 年未更新） | 可用，跟隨 npm 4.1.1 |
 | Flatpickr | 無官方模組（`nuxt-flatpickr` 為個人套件，最後發布於 2018 年） | 無官方整合套件（`vue-flatpickr-component` 雖被官方 README「See also」清單收錄推薦，但非官方 org `flatpickr` 發布，依嚴格標準不算官方） | 可用，跟隨 npm 4.6.13 |
 | Vue Easy Lightbox | 無官方模組（`nuxt-easy-lightbox` 1.1.0 為第三方 `modbender` 維護，非作者 XiongAmao 本人；MIT 授權，2025-07-30 發布，GitHub 最後更新 2026-06-16，模組本身仍有維護，但其相依為 `vue-easy-lightbox@^1.19.0`，核心套件的停滯狀態會直接繼承下來） | 不適用（本身即為 Vue 專屬元件庫） | 可用，跟隨 npm 1.19.0 |
+| Isotope | 無官方模組（僅有社群範例專案示範如何在 Nuxt 中引入，非正式模組） | 無官方整合套件（`vueisotope` 為第三方 `David-Desmaisons` 維護，`vuxtras` 亦為第三方套件合集，皆非 Metafizzy 官方 org） | 可用，跟隨 npm 3.0.6（8 年未更新的舊版本） |
 | Fancybox | 無官方模組（官方整合頁 `fancybox/integration/nuxt/` 回傳 404） | 無官方整合套件（官方 Vue 整合頁僅提供範例程式碼供自行複製，未發布正式套件） | 技術上可用，但 ⚠️ `@fancyapps/ui` 仍為付費商業授權，CDN 能取得檔案不代表取得合法使用授權，授權風險不因此改變 |
 
 ### ⚠️ FullCalendar `@fullcalendar/vue3` 版本號與 GitHub tag 不同步
@@ -117,6 +119,17 @@ Vue 2 專案若使用 `vue2` dist-tag 的 0.23.0（2023-02-28 發布），停滯
 - 換句話說：**只要團隊是透過 npm 安裝目前版本，授權仍是 MIT，沒有問題**；但如果未來套件從 GitHub 直接引用原始碼、或 npm 發布新版本沿用 repo 目前的授權條款，屆時的授權條件會改變，需要重新確認是否符合公司法遵要求。
 - 建議：安裝時鎖定目前 npm 上的 4.1.1（MIT）版本，並在下次此表格例行更新查核時，特別留意 `animate.css` 的授權欄位是否隨新版發布而變動。
 
+### ⚠️ Isotope（`isotope-layout`）—— 已停滯逾 8 年，且授權為 GPLv3／付費雙軌制
+
+查證官方 [授權頁面](https://isotope.metafizzy.co/license.html) 與 npm registry、GitHub API：
+
+- npm 最新版本 `3.0.6` 於 **2018-04-06** 發布，至今超過 8 年未發版；GitHub `metafizzy/isotope` 最後一次程式碼異動是 **2021-09-24**，也已超過 4 年，屬於「npm 與原始碼一起停滯」的型態，目前待處理 issue 有 76 個。
+- 授權採**雙軌制**：npm `package.json` 宣告為 **GPL-3.0**，代表若團隊願意將使用 Isotope 的專案原始碼一併以 GPLv3 公開釋出，理論上可免費使用；但官方授權頁面明確寫明，只要是「領薪水執行的工作、其中一部分是實作 Isotope」，就需要**商業授權**，也就是一般公司內部或商業專案（不打算把自己的程式碼一併開源）必須付費（依開發者人數分級：個人 25 美元／團隊 8 人 110 美元／組織無上限 320 美元，2026-08-19 查證金額）。
+- 綜合兩點：這是「已停滯」與「授權疑慮」同時成立的套件，風險層級高於單純授權疑慮但仍活躍維護的 Fancybox，也高於單純停滯但授權單純的 AOS 等套件。
+- 查證時另比對常見的同類替代方案 [Muuri](https://github.com/haltu/muuri)（star 數 10,943，遠高於下方建議的 Shuffle.js）：GitHub 顯示最後 push 時間為 2024-05-25，但 npm 最新版本 `0.9.5` 實際發布於 **2021-07-09**，同樣超過 5 年未發版，與 `animate.css` 案例相同屬於「GitHub 時間戳記比 npm 版本新，但核心功能其實已久未更新」的陷阱，因此未列入下方替代方案表格的建議選項。
+
+建議：若團隊目前仍在使用 Isotope 且未購買授權，同樣建議優先跟法務／PM 確認授權狀態；技術替代方案見下方「開源免費替代方案建議」。
+
 ### ℹ️ GSAP —— 授權文字非標準 MIT，但確認可商用
 
 GSAP 官方 [授權頁面](https://gsap.com/licensing/) 說明目前所有外掛（含過去付費的 SplitText、MorphSVG）皆已納入免費標準授權，商業用途、SaaS 產品都涵蓋在內。唯一限制是不能用來開發與 Webflow 競爭的視覺化動畫建構工具，與一般前端專案使用情境無關。若原碼掃描工具因授權文字非標準 SPDX 格式而標記為風險，屬於誤報，可備註說明。
@@ -127,7 +140,7 @@ Quill（`quill`，團隊透過 Vue Quilly 間接使用的底層編輯器引擎�
 
 ### 💡 開源免費替代方案建議（供評估，非現況異動）
 
-以下為「已停滯」與「授權疑慮」共 8 個套件的開源免費替代方案，查證時間 2026-07-31，方法同上（`npm registry` + GitHub API）。這裡只列建議，不代表團隊已經決定更換，實際導入前建議先評估既有程式碼的相依範圍與改寫成本。
+以下為「已停滯」與「授權疑慮」共 9 個套件的開源免費替代方案，查證時間 2026-07-31（Isotope 一列另於 2026-08-19 查證），方法同上（`npm registry` + GitHub API）。這裡只列建議，不代表團隊已經決定更換，實際導入前建議先評估既有程式碼的相依範圍與改寫成本。
 
 **先合併再新增**：Magnific Popup、EasyZoom、Vue Easy Lightbox、Fancybox 這四個套件的核心需求（燈箱展示、局部放大）高度重疊，建議先評估合併到團隊已在「正常維護中」清單裡的 GLightbox，減少套件數量；只有 Fancybox 那種進階畫廊手勢功能 GLightbox 未涵蓋時，才需要額外引入 PhotoSwipe。AOS 的捲動動畫需求，也可以直接用團隊已導入的 GSAP 內建 ScrollTrigger 外掛達成，不需要新增依賴。
 
@@ -141,6 +154,7 @@ Quill（`quill`，團隊透過 Vue Quilly 間接使用的底層編輯器引擎�
 | V-Calendar／Nuxt V-Calendar | 已停滯近 3 年 | [@vuepic/vue-datepicker](https://github.com/Vuepic/vue-datepicker)（Vue 3 專用，維護活躍） | `@vuepic/vue-datepicker` | MIT | 14.0.0／2026-06-02 | 2026-07-08 | 10 |
 | Flatpickr | 已停滯逾 4 年 | [vanilla-calendar-pro](https://github.com/uvarov-frontend/vanilla-calendar-pro) 或 [cally](https://github.com/WickyNilliams/cally)（Web Component，框架無關，符合公司 Nuxt／Vue／CDN 多種引入方式） | `vanilla-calendar-pro` 或 `cally` | MIT | 3.1.0／2026-01-09（vanilla-calendar-pro）、0.9.2／2026-02-05（cally） | 2026-07-01、2026-07-10 | 18、15 |
 | Animate.css | GitHub 原始碼授權已改 Hippocratic License 2.1（npm 上目前版本仍為 MIT） | 短期無需更換，鎖定現有 npm 4.1.1（MIT）版本即可；中長期若要徹底避開授權疑慮，可評估改用團隊已導入的 [GSAP](https://gsap.com/) 改寫動畫觸發邏輯 | — | — | — | — | — |
+| Isotope | 已停滯逾 8 年，且授權為 GPLv3／付費雙軌制 | [Shuffle.js](https://shuffle.js.org)（官方明講「inspired by Isotope and Packery」，定位即為 Isotope 替代品；無 jQuery 或其他 runtime 相依，內建 TypeScript 型別） | `shufflejs` | MIT | 7.0.0／2026-02-13 | 2026-05-12 | 14（星數 2,371，近期仍有 commit，非棄置） |
 
 另外查證時發現一個常見的 EasyZoom 替代方案 **[drift-zoom](https://github.com/strawdynamics/drift)** 已改名搬到 `strawdynamics/drift`，最後一次 GitHub 更新是 2024-06-28，距今超過 2 年，本身也屬於停滯狀態，因此未列入上表推薦選項。
 
