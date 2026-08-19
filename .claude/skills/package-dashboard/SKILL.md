@@ -32,7 +32,6 @@ description: 把這個專案 README.md 裡的第三方套件表格（正常維�
    | `homepageUrl` | 官網連結 | |
    | `description` | 「功能描述」欄 | |
    | `npmName` | 「npm 套件名」欄 | |
-   | `currentVersion` | 「目前用版本」欄，README 寫「待補」時這裡填 `null`（頁面會自動顯示「待補」樣式，不要直接寫字串 `"待補"`） | |
    | `latestVersion` / `npmLastPublish` / `githubLastUpdate` | 對應欄位原文照抄，含括號裡的年份說明 | |
    | `license` | 「授權」欄；有額外說明時保留原文（例如「⚠️ 見下方說明」），`null` 表示待補 | |
    | `category` | 這個套件在 README 屬於哪個表格：`normal` / `stalled` / `license-risk` | |
@@ -59,5 +58,5 @@ description: 把這個專案 README.md 裡的第三方套件表格（正常維�
 ## 邊界情況
 
 - **README 表格結構本身變了**（新增欄位、拆表格、改分類邏輯），不要自己猜著套進現有的 `PACKAGES` schema——先跟使用者確認新結構要怎麼反映在頁面上，schema 要跟著調整時，這份 SKILL.md 的欄位對照表也要同步更新。
-- **使用者要開放線上編輯**（例如讓團隊成員直接在頁面上填「目前用版本」並即時同步給所有人看），這個頁面目前是純讀取的靜態 Artifact，不支援這件事——需要先呼叫 `artifact-capabilities` skill 評估共享狀態機制，屬於另一個決定，不要自己加。
+- **使用者要開放線上編輯**（例如讓團隊成員直接在頁面上填某個欄位並即時同步給所有人看），這個頁面目前是純讀取的靜態 Artifact，不支援這件事——需要先呼叫 `artifact-capabilities` skill 評估共享狀態機制，屬於另一個決定，不要自己加。
 - **頁面的視覺設計**（配色、字體、版面）已經定案，純資料更新不用重新設計；使用者明確要求改版面時才動 CSS，並遵守 `frontend-design` 與 `frontend-standards` 兩支 skill 的規範。
