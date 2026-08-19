@@ -1,0 +1,1331 @@
+<title>第三方套件總覽</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+  :root {
+    --ground: #f6f5f1;
+    --surface: #ffffff;
+    --surface-raised: #fdfcf9;
+    --ink: #1c1b19;
+    --ink-muted: #6b6862;
+    --ink-faint: #a19d93;
+    --border: #dedad2;
+    --border-strong: #c7c2b6;
+    --accent: #2b4c5c;
+    --accent-ink: #ffffff;
+    --accent-soft: #e4eef0;
+    --good: #1f7a4d;
+    --good-bg: #e4f3ea;
+    --good-border: #bfe1cd;
+    --warn: #a85e00;
+    --warn-bg: #fbf0dd;
+    --warn-border: #efd9ad;
+    --risk: #b3261e;
+    --risk-bg: #fbe7e5;
+    --risk-border: #f0c3bf;
+    --shadow: 0 1px 2px rgba(28, 27, 25, 0.06), 0 8px 24px rgba(28, 27, 25, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #15181b;
+      --surface: #1d2125;
+      --surface-raised: #22262a;
+      --ink: #edebe6;
+      --ink-muted: #9b9890;
+      --ink-faint: #6d6a63;
+      --border: #2c3136;
+      --border-strong: #3a4046;
+      --accent: #8fc0cf;
+      --accent-ink: #0e1416;
+      --accent-soft: #22323a;
+      --good: #56cf94;
+      --good-bg: #17281f;
+      --good-border: #244a34;
+      --warn: #e6ac47;
+      --warn-bg: #2c2313;
+      --warn-border: #4a3a1c;
+      --risk: #f0736b;
+      --risk-bg: #2f1a18;
+      --risk-border: #4e2a26;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ground: #15181b;
+    --surface: #1d2125;
+    --surface-raised: #22262a;
+    --ink: #edebe6;
+    --ink-muted: #9b9890;
+    --ink-faint: #6d6a63;
+    --border: #2c3136;
+    --border-strong: #3a4046;
+    --accent: #8fc0cf;
+    --accent-ink: #0e1416;
+    --accent-soft: #22323a;
+    --good: #56cf94;
+    --good-bg: #17281f;
+    --good-border: #244a34;
+    --warn: #e6ac47;
+    --warn-bg: #2c2313;
+    --warn-border: #4a3a1c;
+    --risk: #f0736b;
+    --risk-bg: #2f1a18;
+    --risk-border: #4e2a26;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.9em;
+  }
+
+  .placeholder {
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px 96px;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    padding: 56px 0 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .masthead-eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin: 0 0 14px;
+  }
+
+  .masthead h1 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin: 0 0 12px;
+    text-wrap: balance;
+    letter-spacing: 0.01em;
+  }
+
+  .masthead-desc {
+    max-width: 62ch;
+    color: var(--ink-muted);
+    font-size: 1.02rem;
+    margin: 0 0 20px;
+  }
+
+  .masthead-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 0.86rem;
+    color: var(--ink-muted);
+  }
+
+  .masthead-meta dt {
+    display: inline;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .masthead-meta dt::after {
+    content: "：";
+  }
+
+  .masthead-meta dd {
+    display: inline;
+    margin: 0;
+  }
+
+  /* ---------- stat strip ---------- */
+
+  .stat-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 28px;
+  }
+
+  .stat-tile {
+    background: var(--surface);
+    padding: 18px 20px;
+  }
+
+  .stat-tile-value {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1.9rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  .stat-tile-label {
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+  }
+
+  .stat-tile--good .stat-tile-value {
+    color: var(--good);
+  }
+  .stat-tile--warn .stat-tile-value {
+    color: var(--warn);
+  }
+  .stat-tile--risk .stat-tile-value {
+    color: var(--risk);
+  }
+
+  /* ---------- consolidation callout ---------- */
+
+  .callout {
+    margin-top: 24px;
+    background: var(--accent-soft);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    padding: 16px 20px;
+  }
+
+  .callout summary {
+    cursor: pointer;
+    font-weight: 500;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .callout summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .callout summary::before {
+    content: "▸";
+    font-size: 0.8em;
+    transition: transform 0.15s ease;
+  }
+
+  .callout[open] summary::before {
+    transform: rotate(90deg);
+  }
+
+  .callout-body {
+    margin-top: 12px;
+    color: var(--ink-muted);
+    font-size: 0.94rem;
+  }
+
+  .callout-body p {
+    margin: 0 0 10px;
+  }
+
+  .callout-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------- filter bar ---------- */
+
+  .filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--ground);
+    padding: 20px 0 16px;
+    margin-top: 8px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .search-input {
+    flex: 1 1 260px;
+    min-width: 200px;
+    padding: 10px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-family: inherit;
+  }
+
+  .search-input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .chip-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .chip {
+    font-family: inherit;
+    font-size: 0.86rem;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    color: var(--ink-muted);
+    cursor: pointer;
+  }
+
+  .chip:hover {
+    border-color: var(--accent);
+    color: var(--ink);
+  }
+
+  .chip:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  .chip.is-active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 500;
+  }
+
+  .flag-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.86rem;
+    color: var(--ink-muted);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .flag-toggle input {
+    accent-color: var(--risk);
+  }
+
+  .result-count {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    margin: 14px 0 0;
+  }
+
+  /* ---------- package list ---------- */
+
+  .package-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .package-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+  }
+
+  .package-card.is-hidden {
+    display: none;
+  }
+
+  .package-card--sub {
+    margin-left: 28px;
+    border-left: 3px solid var(--accent-soft);
+    background: var(--surface-raised);
+  }
+
+  .package-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .package-card-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .package-name {
+    font-family: "Noto Serif TC", serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .package-name:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .package-subnote {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+  }
+
+  .status-pill {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .status-pill--good {
+    color: var(--good);
+    background: var(--good-bg);
+    border-color: var(--good-border);
+  }
+
+  .status-pill--warn {
+    color: var(--warn);
+    background: var(--warn-bg);
+    border-color: var(--warn-border);
+  }
+
+  .status-pill--risk {
+    color: var(--risk);
+    background: var(--risk-bg);
+    border-color: var(--risk-border);
+  }
+
+  .license-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.76rem;
+    padding: 4px 10px;
+    border-radius: 999px;
+    color: var(--risk);
+    background: var(--risk-bg);
+    border: 1px solid var(--risk-border);
+    margin-left: 6px;
+  }
+
+  .package-description {
+    margin: 12px 0 0;
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+    max-width: 72ch;
+  }
+
+  .package-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    gap: 12px 20px;
+    margin: 16px 0 0;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+  }
+
+  .package-meta-item {
+    margin: 0;
+  }
+
+  .package-meta-item dt {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin: 0 0 3px;
+  }
+
+  .package-meta-item dd {
+    margin: 0;
+    font-size: 0.88rem;
+  }
+
+  .package-details {
+    margin-top: 14px;
+  }
+
+  .package-details summary {
+    cursor: pointer;
+    font-size: 0.86rem;
+    color: var(--accent);
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .package-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .package-details summary::before {
+    content: "▸";
+    font-size: 0.75em;
+    transition: transform 0.15s ease;
+  }
+
+  .package-details[open] summary::before {
+    transform: rotate(90deg);
+  }
+
+  .package-details-body {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 16px;
+  }
+
+  .integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+
+  .integration-item dt {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin: 0 0 4px;
+  }
+
+  .integration-item dd {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+  }
+
+  .notes p {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+  }
+
+  .notes p:last-child {
+    margin-bottom: 0;
+  }
+
+  .alternative-box {
+    background: var(--accent-soft);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .alternative-box-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    margin: 0 0 6px;
+  }
+
+  .alternative-box-name {
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+
+  .alternative-box-meta {
+    font-size: 0.84rem;
+    color: var(--ink-muted);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ink-faint);
+  }
+
+  .empty-state.is-hidden {
+    display: none;
+  }
+
+  /* ---------- footer ---------- */
+
+  .page-footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+
+  .page-footer details {
+    margin-top: 14px;
+  }
+
+  .page-footer summary {
+    cursor: pointer;
+    color: var(--ink-muted);
+  }
+
+  .page-footer pre {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
+  }
+</style>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="masthead-eyebrow">前端第三方套件稽核</p>
+    <h1>第三方套件總覽</h1>
+    <p class="masthead-desc">
+      追蹤團隊專案中實際使用的第三方套件，包含目前版本、最新版本、官方維護狀態與授權條款，作為原碼掃描與授權合規檢查的依據。取代每次手動貼到 Google
+      試算表的流程——這份頁面直接依 <span class="mono">README.md</span> 產生，更新後重新發布同一個連結即可。
+    </p>
+    <dl class="masthead-meta">
+      <div><dt>最後查詢時間</dt><dd>2026-07-28</dd></div>
+      <div><dt>資料來源</dt><dd>npm registry、GitHub 官方 API、nuxt.com 官方模組清單、jsDelivr API、各套件官方授權頁面</dd></div>
+      <div><dt>收錄範圍</dt><dd>18 個核心套件 ＋ 2 個團隊實際引入的 Nuxt 模組</dd></div>
+    </dl>
+
+    <div class="stat-strip" id="stat-strip"></div>
+
+    <details class="callout">
+      <summary>建議摘要：先合併再新增</summary>
+      <div class="callout-body">
+        <p>
+          Magnific Popup、EasyZoom、Vue Easy Lightbox、Fancybox 這四個套件的核心需求（燈箱展示、局部放大）高度重疊，建議先評估合併到團隊已在「正常維護中」清單裡的
+          GLightbox，減少套件數量；只有 Fancybox 那種進階畫廊手勢功能 GLightbox 未涵蓋時，才需要額外引入 PhotoSwipe。
+        </p>
+        <p>AOS 的捲動動畫需求，也可以直接用團隊已導入的 GSAP 內建 ScrollTrigger 外掛達成，不需要新增依賴。</p>
+        <p>以上僅為建議，不代表團隊已經決定更換，實際導入前請先評估既有程式碼的相依範圍與改寫成本。</p>
+      </div>
+    </details>
+  </header>
+
+  <div class="filter-bar">
+    <input
+      type="search"
+      class="search-input"
+      id="search-input"
+      placeholder="搜尋套件名稱、npm 套件名或功能描述"
+      aria-label="搜尋套件"
+    />
+    <div class="chip-group" id="chip-group" role="group" aria-label="依狀態篩選">
+      <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">全部</button>
+      <button type="button" class="chip" data-filter="normal" aria-pressed="false">正常維護中</button>
+      <button type="button" class="chip" data-filter="stalled" aria-pressed="false">已停滯</button>
+      <button type="button" class="chip" data-filter="license-risk" aria-pressed="false">授權疑慮</button>
+    </div>
+    <label class="flag-toggle">
+      <input type="checkbox" id="license-flag-toggle" />
+      只看授權需留意
+    </label>
+  </div>
+
+  <p class="result-count" id="result-count"></p>
+
+  <main class="package-list" id="package-list"></main>
+
+  <p class="empty-state" id="empty-state">沒有符合條件的套件，試試調整搜尋或篩選條件。</p>
+
+  <footer class="page-footer">
+    <p>
+      「目前用版本」欄位需要團隊成員依實際專案回填，標示為「待補」的表示本文件建立時尚未取得。此頁面為唯讀參考，資料更新請回
+      <span class="mono">README.md</span> 修改後重新產生。
+    </p>
+    <details>
+      <summary>如何更新這份表格</summary>
+      <pre class="mono"><code># 查詢單一套件的最新版本、最後發布時間、授權
+npm view &lt;套件名&gt; version time.modified license
+
+# 查詢 GitHub repo 是否已封存、最後一次程式碼異動時間
+curl -s "https://api.github.com/repos/&lt;擁有者&gt;/&lt;repo名稱&gt;" \
+  -H "Accept: application/vnd.github+json" \
+  | node -e "let d='';process.stdin.on('data',c=&gt;d+=c);process.stdin.on('end',()=&gt;{const j=JSON.parse(d);console.log(JSON.stringify({archived:j.archived,pushed_at:j.pushed_at,open_issues:j.open_issues_count}))})"</code></pre>
+    </details>
+  </footer>
+</div>
+
+<script>
+  const PACKAGES = [
+    {
+      id: "sweetalert2",
+      name: "SweetAlert2",
+      homepageUrl: "https://sweetalert2.github.io/",
+      description: "客製化彈出視窗與警示訊息（alert／confirm／toast）元件庫，取代瀏覽器原生 alert",
+      npmName: "sweetalert2",
+      currentVersion: null,
+      latestVersion: "11.26.25",
+      npmLastPublish: "2026-05-23",
+      githubLastUpdate: "2026-07-20",
+      license: "MIT",
+      category: "normal",
+      statusLabel: "✅ 正常，活躍維護",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件（官方 README 僅列出 React／Angular／Laravel 三個官方整合，vue-sweetalert2 屬社群套件）",
+      cdn: "可用，跟隨 npm 11.26.25",
+    },
+    {
+      id: "bootstrap",
+      name: "Bootstrap",
+      homepageUrl: "https://getbootstrap.com/",
+      description: "CSS／JS UI 框架，提供網格系統、預設元件樣式與響應式版面工具",
+      npmName: "bootstrap",
+      currentVersion: null,
+      latestVersion: "5.3.8",
+      npmLastPublish: "2026-06-05",
+      githubLastUpdate: "2026-07-26",
+      license: "MIT",
+      category: "normal",
+      statusLabel: "✅ 正常，活躍維護",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件（BootstrapVue／BootstrapVueNext 為獨立社群專案，非 twbs 官方組織維護，且已停止支援 Vue 3）",
+      cdn: "可用，跟隨 npm 5.3.8",
+    },
+    {
+      id: "vue-quilly",
+      name: "Vue Quilly",
+      homepageUrl: "https://vue-quilly.vercel.app/",
+      description: "Quill 富文本編輯器的 Vue 3 元件包裝，讓 Quill 能以 Vue 元件形式直接使用",
+      npmName: "vue-quilly",
+      currentVersion: null,
+      latestVersion: "1.1.6",
+      npmLastPublish: "2025-12-07",
+      githubLastUpdate: "2026-03-23",
+      license: "MIT",
+      category: "normal",
+      statusLabel: "✅ 正常，但專案規模小、更新頻率較低，建議留意",
+      nuxt: "無官方模組（README 中的「Nuxt Integration」連結僅為 SSR 設定範例專案，未發布成 npm 套件）",
+      vue: "不適用（本身即為 Vue 專屬元件庫）",
+      cdn: "可用，跟隨 npm 1.1.6",
+    },
+    {
+      id: "quill",
+      name: "Quill",
+      homepageUrl: "https://quilljs.com/",
+      description: "富文本編輯器（WYSIWYG）核心引擎，提供可自訂的內容編輯與格式化功能",
+      npmName: "quill",
+      currentVersion: null,
+      latestVersion: "2.0.3",
+      npmLastPublish: "2024-11-30（近 1 年 8 個月未發版）",
+      githubLastUpdate: "2025-07-25",
+      license: "BSD-3-Clause",
+      category: "normal",
+      statusLabel: "✅ 正常，但 npm 發版頻率低，建議留意",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件（官方僅提供 vanilla JS API；團隊使用的 vue-quilly 為第三方 alekswebnet 維護，非 Quill 官方 org slab）",
+      cdn: "可用，跟隨 npm 2.0.3",
+      notes: [
+        "Quill npm 最後一次發版是 2024-11-30（近 1 年 8 個月未發版），單看這個數字容易誤判為停滯套件。但查證 GitHub slab/quill repo 發現最後一次程式碼異動是 2025-07-25，且 repo 未封存，代表官方仍持續開發，只是尚未把累積的變更打包發布新版，與 AOS、Flatpickr 那種「GitHub 也一起停滯」的情況不同，建議列為正常維護但留意，而非直接歸類已停滯。",
+        "Quill 本身授權為 BSD-3-Clause，與 Vue Quilly 的 MIT 不同，但兩者都是標準寬鬆式開源授權，商業使用無限制，授權層面沒有疑慮，僅供掃描工具比對授權欄位時參考。",
+      ],
+    },
+    {
+      id: "swiper",
+      name: "Swiper",
+      homepageUrl: "https://swiperjs.com/",
+      description: "觸控滑動輪播元件，支援圖片輪播、多頁籤切換等多種滑動互動情境",
+      npmName: "swiper",
+      currentVersion: null,
+      latestVersion: "14.0.6",
+      npmLastPublish: "2026-07-22",
+      githubLastUpdate: "2026-07-24",
+      license: "MIT",
+      category: "normal",
+      statusLabel: "✅ 正常，非常活躍",
+      nuxt: "無官方模組（nuxt.com 上架的 nuxt-swiper 官方頁面明確標示為第三方 @cpreston321 維護；npm 最新 2.0.2，2026-05-18 發布，GitHub 最後更新 2026-07-27，維護活躍）",
+      vue: "已內建於核心套件（swiper/vue entry point 為官方文件指定用法，非獨立套件，版本與核心套件 14.0.6 一致）",
+      cdn: "可用，跟隨 npm 14.0.6",
+    },
+    {
+      id: "nuxt-swiper",
+      name: "Nuxt Swiper",
+      isSub: true,
+      subNote: "Swiper 的 Nuxt 模組，第三方 @cpreston321 維護",
+      homepageUrl: "https://github.com/cpreston321/nuxt-swiper",
+      description: "Swiper 的 Nuxt 模組封裝，簡化在 Nuxt 專案中安裝與設定 Swiper 的流程",
+      npmName: "nuxt-swiper",
+      currentVersion: "2.0.2",
+      latestVersion: "2.0.2",
+      npmLastPublish: "2026-05-18",
+      githubLastUpdate: "2026-07-27",
+      license: null,
+      category: "normal",
+      statusLabel: "✅ 正常，維護活躍，但非 Swiper 官方模組",
+    },
+    {
+      id: "gsap",
+      name: "GSAP",
+      homepageUrl: "https://gsap.com/",
+      description: "JavaScript 動畫引擎，用於製作高效能的網頁動畫與時間軸控制",
+      npmName: "gsap",
+      currentVersion: null,
+      latestVersion: "3.15.0",
+      npmLastPublish: "2026-04-13",
+      githubLastUpdate: "2026-04-13",
+      license: "自訂「Standard No Charge License」",
+      category: "normal",
+      statusLabel: "✅ 授權特殊但確認可商用",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件（官方僅發布 @gsap/react，官方文件明確說明「there isn't an official @gsap/vue package」）",
+      cdn: "可用，跟隨 npm 3.15.0",
+      notes: [
+        "GSAP 官方授權頁面（gsap.com/licensing/）說明目前所有外掛（含過去付費的 SplitText、MorphSVG）皆已納入免費標準授權，商業用途、SaaS 產品都涵蓋在內。唯一限制是不能用來開發與 Webflow 競爭的視覺化動畫建構工具，與一般前端專案使用情境無關。若原碼掃描工具因授權文字非標準 SPDX 格式而標記為風險，屬於誤報，可備註說明。",
+      ],
+    },
+    {
+      id: "echarts",
+      name: "Apache ECharts",
+      homepageUrl: "https://echarts.apache.org/",
+      description: "資料視覺化圖表庫，提供折線圖、長條圖、地圖等多種圖表類型",
+      npmName: "echarts",
+      currentVersion: null,
+      latestVersion: "6.1.0",
+      npmLastPublish: "2026-05-19",
+      githubLastUpdate: "2026-07-26",
+      license: "Apache-2.0",
+      category: "normal",
+      statusLabel: "✅ 正常，Apache 基金會專案，非常活躍",
+      nuxt: "無官方模組（nuxt-echarts 為個人維護，非 apache／ecomfe 組織）",
+      vue: "✅ 有 —— vue-echarts 8.0.1（GitHub ecomfe/vue-echarts，apache/echarts 官方 README 直接連結背書；GitHub 最後更新 2026-07-24）",
+      cdn: "可用，echarts、vue-echarts 皆跟隨各自 npm 版本",
+    },
+    {
+      id: "fullcalendar",
+      name: "FullCalendar",
+      homepageUrl: "https://fullcalendar.io/",
+      description: "行事曆／排程元件，支援月/週/日檢視、事件拖曳與跨資源排程",
+      npmName: "fullcalendar",
+      currentVersion: null,
+      latestVersion: "7.0.2",
+      npmLastPublish: "2026-07-24",
+      githubLastUpdate: "2026-07-24",
+      license: "MIT",
+      category: "normal",
+      statusLabel: "✅ 正常，非常活躍",
+      nuxt: "無官方模組（官方文件僅提供 Nuxt 設定範例 repo，非正式模組）",
+      vue: "✅ 有 —— @fullcalendar/vue3，npm 最新 7.0.2，同屬官方 GitHub org fullcalendar（版本落差，見下方說明）",
+      cdn: "可用，跟隨各自 npm 版本",
+      notes: [
+        "@fullcalendar/vue3 的 npm 最新版本是 7.0.2，發布時間與核心套件 fullcalendar 一致（約 2026-07-24），但其獨立支援 repo（fullcalendar/fullcalendar-vue）GitHub 上最新的 git tag 只到 v6.1.21。研判是 FullCalendar 團隊已將 @fullcalendar/vue3 的版本號同步進核心 monorepo 的 7.x 版本線一起發布，但這個獨立 repo 本身沒有另外打上對應的 v7 git tag。實務上以 npm 上的版本號 7.0.2 為準，但若團隊之後要去 GitHub 對照原始碼或回報 issue，需要知道 tag 顯示的版本會落後、屬正常現象，不代表套件本身沒更新。",
+      ],
+    },
+    {
+      id: "glightbox",
+      name: "GLightbox",
+      homepageUrl: "https://biati-digital.github.io/glightbox/",
+      description: "圖片／影片燈箱（lightbox）彈出檢視元件，用於放大瀏覽媒體內容",
+      npmName: "glightbox",
+      currentVersion: null,
+      latestVersion: "3.3.1",
+      npmLastPublish: "2025-01-21",
+      githubLastUpdate: "2025-12-02",
+      license: "MIT",
+      category: "normal",
+      statusLabel: "✅ 正常，但 npm 發版頻率較低，建議留意",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件",
+      cdn: "可用，跟隨 npm 3.3.1",
+    },
+    {
+      id: "aos",
+      name: "AOS",
+      homepageUrl: "https://michalsnik.github.io/aos/",
+      description: "捲動觸發動畫效果庫（Animate On Scroll），元素捲動進入視窗時觸發動畫",
+      npmName: "aos",
+      currentVersion: null,
+      latestVersion: "2.3.4",
+      npmLastPublish: "2022-06-13（超過 4 年未發版）",
+      githubLastUpdate: "2024-03-26",
+      license: "MIT",
+      category: "stalled",
+      statusLabel: "⚠️ 已停滯，373 個未解決 issue",
+      nuxt: "無官方模組（nuxt-aos 為第三方維護）",
+      vue: "無官方整合套件（aos-vue 為第三方維護）",
+      cdn: "可用，跟隨 npm 2.3.4",
+      alternative: {
+        name: "GSAP ScrollTrigger",
+        url: "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
+        npmName: "隨 gsap",
+        license: "自訂授權，已確認可商用",
+        version: "3.15.0／2026-04-13",
+        note: "團隊已導入 GSAP，為其內建 plugin，無需新增依賴",
+      },
+    },
+    {
+      id: "v-calendar",
+      name: "V-Calendar",
+      homepageUrl: "https://vcalendar.io/",
+      description: "Vue 日期選擇與行事曆元件，支援日期範圍選取與行事曆檢視",
+      npmName: "v-calendar",
+      currentVersion: null,
+      latestVersion: "2.4.2",
+      npmLastPublish: "2023-10-13（近 3 年未發版）",
+      githubLastUpdate: "2024-08-07",
+      license: "MIT",
+      category: "stalled",
+      statusLabel: "⚠️ 已停滯，786 個未解決 issue",
+      nuxt: "無官方模組（@samk-dev/nuxt-vcalendar 為第三方維護，非作者 nathanreyes 本人；維護狀態與核心套件一致停滯）",
+      vue: "不適用（本身即為 Vue 專屬元件庫）",
+      cdn: "可用，跟隨 npm 2.4.2",
+      alternative: {
+        name: "@vuepic/vue-datepicker",
+        url: "https://github.com/Vuepic/vue-datepicker",
+        npmName: "@vuepic/vue-datepicker",
+        license: "MIT",
+        version: "14.0.0／2026-06-02",
+        note: "Vue 3 專用，維護活躍（GitHub 最後更新 2026-07-08，待處理 issue 10）",
+      },
+    },
+    {
+      id: "nuxt-vcalendar",
+      name: "Nuxt V-Calendar",
+      isSub: true,
+      subNote: "V-Calendar 的 Nuxt 模組，第三方 samk-dev 維護",
+      homepageUrl: "https://github.com/samk-dev/nuxt-vcalendar",
+      description: "V-Calendar 的 Nuxt 模組封裝，簡化在 Nuxt 專案中安裝與設定 V-Calendar 的流程",
+      npmName: "@samk-dev/nuxt-vcalendar",
+      currentVersion: "1.0.4",
+      latestVersion: "1.0.4",
+      npmLastPublish: "2024-07-13（近 2 年未發版）",
+      githubLastUpdate: "2024-07-30",
+      license: null,
+      category: "stalled",
+      statusLabel: "⚠️ 已停滯，維護狀態與核心套件 V-Calendar 一致",
+    },
+    {
+      id: "magnific-popup",
+      name: "Magnific Popup",
+      homepageUrl: "https://dimsemenov.com/plugins/magnific-popup/",
+      description: "響應式燈箱（lightbox）彈出視窗外掛，支援圖片、影片、iframe 等內容展示",
+      npmName: "magnific-popup",
+      currentVersion: null,
+      latestVersion: "1.2.0",
+      npmLastPublish: "2024-06-08（超過 2 年未發版）",
+      githubLastUpdate: "2024-06-08",
+      license: "MIT",
+      category: "stalled",
+      statusLabel: "⚠️ 已停滯，678 個未解決 issue",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件",
+      cdn: "可用，跟隨 npm 1.2.0",
+      alternative: {
+        name: "GLightbox",
+        url: "https://biati-digital.github.io/glightbox/",
+        npmName: "glightbox",
+        license: "MIT",
+        version: "3.3.1（GitHub 最後更新 2025-12-02）",
+        note: "團隊已在「正常維護中」清單",
+      },
+    },
+    {
+      id: "easyzoom",
+      name: "EasyZoom",
+      homepageUrl: "https://i-like-robots.github.io/EasyZoom/",
+      description: "圖片局部放大鏡效果外掛，滑鼠移入時放大顯示圖片細節",
+      npmName: "easyzoom",
+      currentVersion: null,
+      latestVersion: "2.6.0",
+      npmLastPublish: "2022-12-30（超過 3 年未發版）",
+      githubLastUpdate: "2024-06-19",
+      license: "MIT",
+      category: "stalled",
+      statusLabel: "⚠️ 已停滯，超過 3 年未發版",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件",
+      cdn: "可用，跟隨 npm 2.6.0",
+      notes: [
+        "查證時發現一個常見的 EasyZoom 替代方案 drift-zoom 已改名搬到 strawdynamics/drift，最後一次 GitHub 更新是 2024-06-28，距今超過 2 年，本身也屬於停滯狀態，因此未列入下方推薦選項。",
+      ],
+      alternative: {
+        name: "medium-zoom",
+        url: "https://github.com/francoischalifour/medium-zoom",
+        npmName: "medium-zoom",
+        license: "MIT",
+        version: "1.1.0／2023-11-16",
+        note: "GitHub 最後更新 2025-12-20，待處理 issue 49",
+      },
+    },
+    {
+      id: "animate-css",
+      name: "Animate.css",
+      homepageUrl: "https://animate.style/",
+      description: "純 CSS 動畫效果類別庫，套用預設 class 即可讓元素套用動畫效果",
+      npmName: "animate.css",
+      currentVersion: null,
+      latestVersion: "4.1.1",
+      npmLastPublish: "2020-09-07（超過 5 年未發版，見下方說明）",
+      githubLastUpdate: "2024-07-29",
+      license: "⚠️ 見下方說明",
+      category: "stalled",
+      licenseFlag: true,
+      statusLabel: "⚠️ 已停滯 + 授權疑慮，見下方說明",
+      nuxt: "無官方模組（社群 nuxt-animate.css 非官方 org 維護）",
+      vue: "無官方整合套件（vue-animate-css、vue3-animate-css 皆為個人套件，且分別已 10 年、4 年未更新）",
+      cdn: "可用，跟隨 npm 4.1.1",
+      notes: [
+        "目前 npm 上發布的 animate.css 套件（4.1.1 版）package.json 內宣告授權為 MIT，屬標準開源授權，可安心使用。",
+        "但 GitHub 官方 repo 的 main 分支（尚未發布到 npm 的最新原始碼）已將授權改為 Hippocratic License 2.1，這是一種非 OSI 認可的「倫理來源（ethical source）」授權，附加了使用者需遵守人權相關條款的限制，不是標準的寬鬆式開源授權，也是 GitHub API 無法辨識其 SPDX 授權代碼（顯示 NOASSERTION）的原因。",
+        "換句話說：只要團隊是透過 npm 安裝目前版本，授權仍是 MIT，沒有問題；但如果未來套件從 GitHub 直接引用原始碼、或 npm 發布新版本沿用 repo 目前的授權條款，屆時的授權條件會改變，需要重新確認是否符合公司法遵要求。",
+        "npm 發布時間修正：真正發布時間是 2020-09-07（原表誤植為 2022-11-18，兩者相差超過 2 年，代表這個套件已停滯超過 5 年而非原本估計的 3 年多）。",
+        "建議：安裝時鎖定目前 npm 上的 4.1.1（MIT）版本，並在下次此表格例行更新查核時，特別留意授權欄位是否隨新版發布而變動。",
+      ],
+      alternative: {
+        name: "短期：鎖定現有 npm 4.1.1（MIT）版本；中長期：改用團隊已導入的 GSAP 改寫動畫觸發邏輯",
+        url: "https://gsap.com/",
+        npmName: "—",
+        license: "—",
+        version: "—",
+        note: "短期無需更換，中長期若要徹底避開授權疑慮再評估",
+      },
+    },
+    {
+      id: "flatpickr",
+      name: "Flatpickr",
+      homepageUrl: "https://flatpickr.js.org/",
+      description: "輕量日期／時間選擇器，無其他相依套件，支援多種日期格式與範圍選取",
+      npmName: "flatpickr",
+      currentVersion: "4.6.13",
+      latestVersion: "4.6.13",
+      npmLastPublish: "2022-04-14（超過 4 年未發版，見下方說明）",
+      githubLastUpdate: "2024-08-02",
+      license: "MIT",
+      category: "stalled",
+      statusLabel: "⚠️ 已停滯，852 個未解決 issue",
+      nuxt: "無官方模組（nuxt-flatpickr 為個人套件，最後發布於 2018 年）",
+      vue: "無官方整合套件（vue-flatpickr-component 雖被官方 README「See also」清單收錄推薦，但非官方 org flatpickr 發布，依嚴格標準不算官方）",
+      cdn: "可用，跟隨 npm 4.6.13",
+      notes: [
+        "npm 發布時間修正：真正發布時間是 2022-04-14（原表誤植為 2022-06-18，相差約 2 個月，停滯年數估計無實質影響）。",
+      ],
+      alternative: {
+        name: "vanilla-calendar-pro 或 cally",
+        url: "https://github.com/uvarov-frontend/vanilla-calendar-pro",
+        npmName: "vanilla-calendar-pro 或 cally",
+        license: "MIT",
+        version: "3.1.0／2026-01-09（vanilla-calendar-pro）、0.9.2／2026-02-05（cally）",
+        note: "cally 為 Web Component，框架無關，符合公司 Nuxt／Vue／CDN 多種引入方式（GitHub 最後更新分別為 2026-07-01、2026-07-10，待處理 issue 18、15）",
+      },
+    },
+    {
+      id: "vue-easy-lightbox",
+      name: "Vue Easy Lightbox",
+      homepageUrl: "https://onycat.com/vue-easy-lightbox/",
+      description: "Vue 3 圖片燈箱（lightbox）元件，支援縮放、拖曳、旋轉與多圖切換",
+      npmName: "vue-easy-lightbox",
+      currentVersion: null,
+      latestVersion: "1.19.0",
+      npmLastPublish: "2024-03-05（近 2 年 5 個月未發版）",
+      githubLastUpdate: "2024-04-03",
+      license: "MIT",
+      category: "stalled",
+      statusLabel: "⚠️ 已停滯，GitHub 亦逾 2 年無 commit，2026 年社群修正 PR 未被處理",
+      nuxt: "無官方模組（nuxt-easy-lightbox 1.1.0 為第三方 modbender 維護，非作者 XiongAmao 本人；模組本身仍有維護，但相依 vue-easy-lightbox@^1.19.0 的停滯狀態會直接繼承）",
+      vue: "不適用（本身即為 Vue 專屬元件庫）",
+      cdn: "可用，跟隨 npm 1.19.0",
+      notes: [
+        "最後一次 npm 發版為 2024-03-05（1.19.0），GitHub main 分支最後一次 commit 也是同一天，屬於「npm 與原始碼一起停滯」的型態。未解決 issue 僅 26 個，但 2026 年仍有新 issue 進來（#158 觸控板縮放連帶觸發整頁縮放、#160 pinch zoom 上限），社群針對 #158 送出的修正 PR #159 自 2026-02-26 起未被合併也未獲回覆，判定維護者已停止投入。此套件 npm 月下載量仍有約 27.8 萬次，屬於「使用量高但已無人維護」的類型。",
+        "風險輪廓與 AOS、Flatpickr 不同：它沒有任何 runtime dependency，僅宣告 peerDependency vue: ^3.0.0，停滯不會帶進 transitive 相依的未修補漏洞；授權為標準 MIT，npm 與 GitHub 宣告一致，法遵層面無疑慮。實際暴露點是 Vue 3 後續 minor 版本的相容性未經測試，以及瀏覽器行為變更造成的互動 bug 不會再修。",
+        "Vue 2 專案若使用 vue2 dist-tag 的 0.23.0（2023-02-28 發布），停滯時間更長，加上 Vue 2 官方支援已於 2023-12-31 結束，建議直接視為不可續用。",
+      ],
+      alternative: {
+        name: "GLightbox",
+        url: "https://biati-digital.github.io/glightbox/",
+        npmName: "glightbox",
+        license: "MIT",
+        version: "3.3.1（GitHub 最後更新 2025-12-02）",
+        note: "同上，改用 GLightbox",
+      },
+    },
+    {
+      id: "isotope",
+      name: "Isotope",
+      homepageUrl: "https://isotope.metafizzy.co/",
+      description: "網格版面篩選、排序與動態佈局函式庫，支援 masonry 等多種版面模式",
+      npmName: "isotope-layout",
+      currentVersion: null,
+      latestVersion: "3.0.6",
+      npmLastPublish: "2018-04-06（超過 8 年未發版）",
+      githubLastUpdate: "2021-09-24（超過 4 年未更新）",
+      license: "⚠️ 見下方說明",
+      category: "stalled",
+      licenseFlag: true,
+      statusLabel: "⚠️ 已停滯 + 授權疑慮，見下方說明",
+      nuxt: "無官方模組（僅有社群範例專案示範如何在 Nuxt 中引入，非正式模組）",
+      vue: "無官方整合套件（vueisotope 為第三方 David-Desmaisons 維護，vuxtras 亦為第三方套件合集，皆非 Metafizzy 官方 org）",
+      cdn: "可用，跟隨 npm 3.0.6（8 年未更新的舊版本）",
+      notes: [
+        "npm 最新版本 3.0.6 於 2018-04-06 發布，至今超過 8 年未發版；GitHub metafizzy/isotope 最後一次程式碼異動是 2021-09-24，也已超過 4 年，屬於「npm 與原始碼一起停滯」的型態，目前待處理 issue 有 76 個。",
+        "授權採雙軌制：npm package.json 宣告為 GPL-3.0，代表若團隊願意將使用 Isotope 的專案原始碼一併以 GPLv3 公開釋出，理論上可免費使用；但官方授權頁面明確寫明，只要是「領薪水執行的工作、其中一部分是實作 Isotope」，就需要商業授權（依開發者人數分級：個人 25 美元／團隊 8 人 110 美元／組織無上限 320 美元，2026-08-19 查證金額）。",
+        "綜合兩點：這是「已停滯」與「授權疑慮」同時成立的套件，風險層級高於單純授權疑慮但仍活躍維護的 Fancybox，也高於單純停滯但授權單純的 AOS 等套件。",
+        "查證時另比對常見的同類替代方案 Muuri（star 數 10,943）：GitHub 顯示最後 push 時間為 2024-05-25，但 npm 最新版本 0.9.5 實際發布於 2021-07-09，同樣超過 5 年未發版，與 Animate.css 案例相同屬於「GitHub 時間戳記比 npm 版本新，但核心功能其實已久未更新」的陷阱，因此未列入替代方案建議選項。",
+      ],
+      alternative: {
+        name: "Shuffle.js",
+        url: "https://shuffle.js.org",
+        npmName: "shufflejs",
+        license: "MIT",
+        version: "7.0.0／2026-02-13",
+        note: "官方明講「inspired by Isotope and Packery」，定位即為 Isotope 替代品；無 jQuery 或其他 runtime 相依，內建 TypeScript 型別（GitHub 最後更新 2026-05-12，待處理 issue 14，星數 2,371）",
+      },
+    },
+    {
+      id: "fancybox",
+      name: "Fancybox",
+      homepageUrl: "https://fancyapps.com/fancybox/",
+      description: "圖片／影片／內容燈箱（lightbox）展示元件，支援畫廊瀏覽與多媒體嵌入",
+      npmName: "@fancyapps/ui",
+      currentVersion: null,
+      latestVersion: "6.1.14",
+      npmLastPublish: "2026-04-29",
+      githubLastUpdate: "2026-04-29",
+      license: "非開源／需付費授權",
+      category: "license-risk",
+      licenseFlag: true,
+      statusLabel: "⚠️ 高風險（維護仍活躍，問題出在授權而非停滯）",
+      nuxt: "無官方模組（官方整合頁 fancybox/integration/nuxt/ 回傳 404）",
+      vue: "無官方整合套件（官方 Vue 整合頁僅提供範例程式碼供自行複製，未發布正式套件）",
+      cdn: "技術上可用，但 @fancyapps/ui 仍為付費商業授權，CDN 能取得檔案不代表取得合法使用授權，授權風險不因此改變",
+      notes: [
+        "官方授權頁面（fancyapps.com/license/）明確寫明：每個專案無論類型、位置或法律形式，都需要有效的付費授權；不可在開源專案中使用；商業用途、公司內網、SaaS 產品皆需購買「商業授權」或「商業擴展授權」。",
+        "若團隊目前是直接引用但尚未購買授權，屬於實際法遵風險，建議優先跟法務／PM 確認授權狀態。",
+      ],
+      alternative: {
+        name: "優先評估改用 GLightbox；進階手勢需求改用 PhotoSwipe",
+        url: "https://github.com/dimsemenov/Photoswipe",
+        npmName: "photoswipe",
+        license: "MIT",
+        version: "5.4.4／2024-05-24",
+        note: "GitHub 最後更新 2025-12-04，待處理 issue 169（星數 2.5 萬，用量大屬業界標準，核心功能已穩定，非棄置）",
+      },
+    },
+  ];
+
+  const CATEGORY_LABEL = {
+    normal: "正常維護中",
+    stalled: "已停滯",
+    "license-risk": "授權疑慮",
+  };
+
+  const CATEGORY_PILL_CLASS = {
+    normal: "status-pill--good",
+    stalled: "status-pill--warn",
+    "license-risk": "status-pill--risk",
+  };
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    })[c]);
+  }
+
+  function renderVersionCell(value) {
+    if (!value) {
+      return '<span class="placeholder">待補</span>';
+    }
+    return `<span class="mono">${escapeHtml(value)}</span>`;
+  }
+
+  function renderStats() {
+    const total = PACKAGES.length;
+    const normal = PACKAGES.filter((p) => p.category === "normal").length;
+    const stalled = PACKAGES.filter((p) => p.category === "stalled").length;
+    const risk = PACKAGES.filter((p) => p.category === "license-risk").length;
+
+    const tiles = [
+      { label: "套件總數", value: total, mod: "" },
+      { label: "正常維護中", value: normal, mod: "good" },
+      { label: "已停滯", value: stalled, mod: "warn" },
+      { label: "授權疑慮", value: risk, mod: "risk" },
+    ];
+
+    document.getElementById("stat-strip").innerHTML = tiles
+      .map(
+        (t) => `
+        <div class="stat-tile${t.mod ? " stat-tile--" + t.mod : ""}">
+          <div class="stat-tile-value">${t.value}</div>
+          <div class="stat-tile-label">${t.label}</div>
+        </div>`
+      )
+      .join("");
+  }
+
+  function renderIntegrationGrid(pkg) {
+    if (!pkg.nuxt && !pkg.vue && !pkg.cdn) return "";
+    const items = [
+      pkg.nuxt ? ["Nuxt 官方模組", pkg.nuxt] : null,
+      pkg.vue ? ["Vue 官方整合套件", pkg.vue] : null,
+      pkg.cdn ? ["CDN via jsDelivr", pkg.cdn] : null,
+    ].filter(Boolean);
+
+    return `<dl class="integration-grid">${items
+      .map(
+        ([label, value]) => `
+        <div class="integration-item">
+          <dt>${escapeHtml(label)}</dt>
+          <dd>${escapeHtml(value)}</dd>
+        </div>`
+      )
+      .join("")}</dl>`;
+  }
+
+  function renderNotes(pkg) {
+    if (!pkg.notes || !pkg.notes.length) return "";
+    return `<div class="notes">${pkg.notes.map((n) => `<p>${escapeHtml(n)}</p>`).join("")}</div>`;
+  }
+
+  function renderAlternative(pkg) {
+    if (!pkg.alternative) return "";
+    const a = pkg.alternative;
+    return `
+      <div class="alternative-box">
+        <p class="alternative-box-label">建議替代方案</p>
+        <p class="alternative-box-name"><a href="${escapeHtml(a.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(
+      a.name
+    )}</a></p>
+        <p class="alternative-box-meta">npm：<span class="mono">${escapeHtml(a.npmName)}</span> ・ 授權：${escapeHtml(
+      a.license
+    )} ・ 版本：<span class="mono">${escapeHtml(a.version)}</span></p>
+        ${a.note ? `<p class="alternative-box-meta">${escapeHtml(a.note)}</p>` : ""}
+      </div>`;
+  }
+
+  function renderCard(pkg) {
+    const pillClass = CATEGORY_PILL_CLASS[pkg.category];
+    const flagBadge = pkg.licenseFlag
+      ? '<span class="license-flag">⚠ 授權需留意</span>'
+      : "";
+
+    const detailsBody = [renderIntegrationGrid(pkg), renderNotes(pkg), renderAlternative(pkg)]
+      .filter(Boolean)
+      .join("");
+
+    const detailsBlock = detailsBody
+      ? `<details class="package-details">
+          <summary>整合方式與備註</summary>
+          <div class="package-details-body">${detailsBody}</div>
+        </details>`
+      : "";
+
+    return `
+      <article class="package-card${pkg.isSub ? " package-card--sub" : ""}" data-category="${pkg.category}" data-license-flag="${!!pkg.licenseFlag}" data-search="${escapeHtml(
+      (pkg.name + " " + pkg.npmName + " " + pkg.description).toLowerCase()
+    )}">
+        <div class="package-card-header">
+          <div class="package-card-title">
+            <a class="package-name" href="${escapeHtml(pkg.homepageUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(
+      pkg.name
+    )}</a>
+            ${pkg.subNote ? `<span class="package-subnote">${escapeHtml(pkg.subNote)}</span>` : ""}
+          </div>
+          <div>
+            <span class="status-pill ${pillClass}">${escapeHtml(pkg.statusLabel)}</span>${flagBadge}
+          </div>
+        </div>
+        ${pkg.description ? `<p class="package-description">${escapeHtml(pkg.description)}</p>` : ""}
+        <dl class="package-meta">
+          <div class="package-meta-item"><dt>npm 套件名</dt><dd class="mono">${escapeHtml(pkg.npmName)}</dd></div>
+          <div class="package-meta-item"><dt>目前用版本</dt><dd>${renderVersionCell(pkg.currentVersion)}</dd></div>
+          <div class="package-meta-item"><dt>最新版本</dt><dd>${renderVersionCell(pkg.latestVersion)}</dd></div>
+          <div class="package-meta-item"><dt>npm 最後發布</dt><dd class="mono">${escapeHtml(pkg.npmLastPublish)}</dd></div>
+          <div class="package-meta-item"><dt>GitHub 最後更新</dt><dd class="mono">${escapeHtml(pkg.githubLastUpdate)}</dd></div>
+          <div class="package-meta-item"><dt>授權</dt><dd>${pkg.license ? escapeHtml(pkg.license) : '<span class="placeholder">待補</span>'}</dd></div>
+        </dl>
+        ${detailsBlock}
+      </article>`;
+  }
+
+  function renderList() {
+    document.getElementById("package-list").innerHTML = PACKAGES.map(renderCard).join("");
+  }
+
+  function applyFilters() {
+    const query = document.getElementById("search-input").value.trim().toLowerCase();
+    const activeCategory = document.querySelector(".chip.is-active").dataset.filter;
+    const flagOnly = document.getElementById("license-flag-toggle").checked;
+
+    const cards = document.querySelectorAll(".package-card");
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const matchesCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+      const matchesFlag = !flagOnly || card.dataset.licenseFlag === "true";
+      const matchesQuery = !query || card.dataset.search.includes(query);
+      const visible = matchesCategory && matchesFlag && matchesQuery;
+      card.classList.toggle("is-hidden", !visible);
+      if (visible) visibleCount += 1;
+    });
+
+    document.getElementById("result-count").textContent = `符合條件：${visibleCount} / ${PACKAGES.length} 個套件`;
+    document.getElementById("empty-state").classList.toggle("is-hidden", visibleCount !== 0);
+  }
+
+  function bindEvents() {
+    document.getElementById("search-input").addEventListener("input", applyFilters);
+    document.getElementById("license-flag-toggle").addEventListener("change", applyFilters);
+    document.querySelectorAll(".chip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        document.querySelectorAll(".chip").forEach((c) => {
+          c.classList.remove("is-active");
+          c.setAttribute("aria-pressed", "false");
+        });
+        chip.classList.add("is-active");
+        chip.setAttribute("aria-pressed", "true");
+        applyFilters();
+      });
+    });
+  }
+
+  renderStats();
+  renderList();
+  bindEvents();
+  applyFilters();
+</script>
