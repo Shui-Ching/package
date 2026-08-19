@@ -5,7 +5,7 @@
 - **最後查詢時間**：2026-07-28
 - **資料來源**：npm registry（`npm view` / `registry.npmjs.org`）、GitHub 官方 API、nuxt.com 官方模組清單、jsDelivr API（`data.jsdelivr.com`）、各套件官方授權頁面
 - **表格欄位結構**：以團隊 Google Sheet（三個工作表：正常維護中／已停滯／授權疑慮）的八欄「套件（官網）、npm 套件名、目前用版本、最新版本、npm 最後發布、GitHub 最後更新、授權、狀態」為基礎，另新增「功能描述」欄（放在「套件（官網）」之後），共九欄，方便快速辨識每個套件的用途
-- **表格收錄範圍**：18 個核心套件，外加 2 個團隊實際引入的 Nuxt 模組（`nuxt-swiper`、`@samk-dev/nuxt-vcalendar`），列在各自對應的核心套件下方
+- **表格收錄範圍**：19 個核心套件，外加 2 個團隊實際引入的 Nuxt 模組（`nuxt-swiper`、`@samk-dev/nuxt-vcalendar`），列在各自對應的核心套件下方
 - **「目前用版本」欄位**：需要團隊成員依實際專案回填，本文件建立時尚未取得，先標記為「待補」
 - **「跨框架整合套件對照」章節**：因應公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件而新增，用來標註每個套件是否有「官方」維護的 Nuxt 模組或 Vue 整合套件（判定標準：需有明確證據，例如核心套件官方文件／README 直接連結、或發布在同一個 GitHub org／npm maintainer 底下、或 nuxt.com/modules 標註為 Official；純社群第三方維護者不列入，一律標記「無官方」）。上方套件清單不另設 Nuxt／Vue 欄位，整合狀況一律以該章節為準
 
@@ -25,6 +25,7 @@
 | [Apache ECharts](https://echarts.apache.org/) | 資料視覺化圖表庫，提供折線圖、長條圖、地圖等多種圖表類型 | `echarts` | 待補 | 6.1.0 | 2026-05-19 | 2026-07-26 | Apache-2.0 | ✅ 正常，Apache 基金會專案，非常活躍 |
 | [FullCalendar](https://fullcalendar.io/) | 行事曆／排程元件，支援月/週/日檢視、事件拖曳與跨資源排程 | `fullcalendar` | 待補 | 7.0.2 | 2026-07-24 | 2026-07-24 | MIT | ✅ 正常，非常活躍 |
 | [GLightbox](https://biati-digital.github.io/glightbox/) | 圖片／影片燈箱（lightbox）彈出檢視元件，用於放大瀏覽媒體內容 | `glightbox` | 待補 | 3.3.1 | 2025-01-21 | 2025-12-02 | MIT | ✅ 正常，但 npm 發版頻率較低，建議留意 |
+| [Shuffle.js](https://shuffle.js.org) | 網格版面篩選、排序與動態佈局函式庫，官方定位為 Isotope／Packery 的替代品，用於分類展示卡片式內容（見下方 Isotope 替代方案說明） | `shufflejs` | 待補 | 7.0.0 | 2026-02-13 | 2026-05-12 | MIT | ✅ 正常，活躍維護，無 jQuery 或其他 runtime 相依，內建 TypeScript 型別 |
 
 ### ⚠️ 已停滯（官方維護能量不足）
 
@@ -48,7 +49,7 @@
 
 ## 跨框架整合套件對照（Nuxt／Vue／CDN via jsDelivr）
 
-公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件，下表整理每個套件在這四種引入方式下的實際狀況。**結論先講**：18 個套件裡，沒有任何一個擁有官方維護的 Nuxt 模組；Vue 官方整合套件也只有 Apache ECharts、FullCalendar 兩個成立，其餘全部是社群第三方維護，依前述嚴格判定標準不列為官方。CDN via jsDelivr 部分，18 個套件全數可透過 jsDelivr 正常取用，但**jsDelivr 本質是 npm 套件的鏡像 CDN，沒有獨立版本號與更新排程**，通常 npm 發布新版後幾分鐘到數小時內會自動同步，因此下表 CDN 欄位不重複列版本號，只註記「跟隨 npm」。
+公司主要透過 Nuxt、Vue、npm、CDN via jsDelivr 四種方式引入套件，下表整理每個套件在這四種引入方式下的實際狀況。**結論先講**：19 個套件裡，沒有任何一個擁有官方維護的 Nuxt 模組；Vue 官方整合套件也只有 Apache ECharts、FullCalendar 兩個成立，其餘全部是社群第三方維護，依前述嚴格判定標準不列為官方。CDN via jsDelivr 部分，19 個套件全數可透過 jsDelivr 正常取用，但**jsDelivr 本質是 npm 套件的鏡像 CDN，沒有獨立版本號與更新排程**，通常 npm 發布新版後幾分鐘到數小時內會自動同步，因此下表 CDN 欄位不重複列版本號，只註記「跟隨 npm」。
 
 | 套件 | Nuxt 官方模組 | Vue 官方整合套件 | CDN via jsDelivr |
 |---|---|---|---|
@@ -61,6 +62,7 @@
 | Apache ECharts | 無官方模組（`nuxt-echarts` 為個人維護，非 apache／ecomfe 組織） | ✅ 有 —— `vue-echarts` 8.0.1（GitHub `ecomfe/vue-echarts`，`apache/echarts` 官方 README 直接連結背書；GitHub 最後更新 2026-07-24） | 可用，`echarts`、`vue-echarts` 皆跟隨各自 npm 版本 |
 | FullCalendar | 無官方模組（官方文件僅提供 Nuxt 設定範例 repo，非正式模組） | ✅ 有 —— `@fullcalendar/vue3`，npm 最新 7.0.2，同屬官方 GitHub org `fullcalendar`（⚠️ 版本落差，見下方說明） | 可用，跟隨各自 npm 版本 |
 | GLightbox | 無官方模組 | 無官方整合套件 | 可用，跟隨 npm 3.3.1 |
+| Shuffle.js | 無官方模組 | 無官方整合套件（`@dmstr/vue-shufflejs-plugin` 為第三方 `dmstr` 維護，非作者 `glen-cheney` 本人，且宣告 Bootstrap 為 peerDependency） | 可用，跟隨 npm 7.0.0 |
 | AOS | 無官方模組（`nuxt-aos` 為第三方維護） | 無官方整合套件（`aos-vue` 為第三方維護） | 可用，跟隨 npm 2.3.4 |
 | V-Calendar | 無官方模組（`@samk-dev/nuxt-vcalendar` 為第三方維護，非作者 `nathanreyes` 本人；npm 最新 1.0.4，2024-07-13 發布，近 2 年未更新，GitHub 最後更新同為 2024-07-30，維護狀態與核心套件 V-Calendar 一致停滯） | 不適用（本身即為 Vue 專屬元件庫） | 可用，跟隨 npm 2.4.2 |
 | Magnific Popup | 無官方模組 | 無官方整合套件 | 可用，跟隨 npm 1.2.0 |
