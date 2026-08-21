@@ -214,53 +214,6 @@
     color: var(--risk);
   }
 
-  /* ---------- consolidation callout ---------- */
-
-  .callout {
-    margin-top: 24px;
-    background: var(--accent-soft);
-    border: 1px solid var(--border-strong);
-    border-radius: 10px;
-    padding: 16px 20px;
-  }
-
-  .callout summary {
-    cursor: pointer;
-    font-weight: 500;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .callout summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .callout summary::before {
-    content: "▸";
-    font-size: 0.8em;
-    transition: transform 0.15s ease;
-  }
-
-  .callout[open] summary::before {
-    transform: rotate(90deg);
-  }
-
-  .callout-body {
-    margin-top: 12px;
-    color: var(--ink-muted);
-    font-size: 1rem;
-  }
-
-  .callout-body p {
-    margin: 0 0 10px;
-  }
-
-  .callout-body p:last-child {
-    margin-bottom: 0;
-  }
-
   /* ---------- filter bar ---------- */
 
   .filter-bar {
@@ -593,25 +546,6 @@
     font-size: 1rem;
   }
 
-  .page-footer details {
-    margin-top: 14px;
-  }
-
-  .page-footer summary {
-    cursor: pointer;
-    color: var(--ink-muted);
-  }
-
-  .page-footer pre {
-    background: var(--surface-raised);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    overflow-x: auto;
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-
   @media (prefers-reduced-motion: reduce) {
     * {
       transition: none !important;
@@ -625,7 +559,7 @@
     <h1>第三方套件總覽</h1>
     <p class="masthead-desc">
       追蹤團隊專案中實際使用的第三方套件，包含目前版本、最新版本、官方維護狀態與授權條款，作為原碼掃描與授權合規檢查的依據。取代每次手動貼到 Google
-      試算表的流程——這份頁面直接依 <span class="mono">README.md</span> 產生，更新後重新發布同一個連結即可。
+      試算表的流程——資料只維護在這份頁面本身，更新後重新發布同一個連結即可。
     </p>
     <dl class="masthead-meta">
       <div><dt>最後查詢時間</dt><dd>2026-07-28</dd></div>
@@ -634,18 +568,6 @@
     </dl>
 
     <div class="stat-strip" id="stat-strip"></div>
-
-    <details class="callout">
-      <summary>建議摘要：先合併再新增</summary>
-      <div class="callout-body">
-        <p>
-          Magnific Popup、EasyZoom、Vue Easy Lightbox、Fancybox 這四個套件的核心需求（燈箱展示、局部放大）高度重疊，建議先評估合併到團隊已在「正常維護中」清單裡的
-          GLightbox，減少套件數量；只有 Fancybox 那種進階畫廊手勢功能 GLightbox 未涵蓋時，才需要額外引入 PhotoSwipe。
-        </p>
-        <p>AOS 的捲動動畫需求，也可以直接用團隊已導入的 GSAP 內建 ScrollTrigger 外掛達成，不需要新增依賴。</p>
-        <p>以上僅為建議，不代表團隊已經決定更換，實際導入前請先評估既有程式碼的相依範圍與改寫成本。</p>
-      </div>
-    </details>
   </header>
 
   <div class="filter-bar">
@@ -676,18 +598,8 @@
 
   <footer class="page-footer">
     <p>
-      此頁面為唯讀參考，資料更新請回 <span class="mono">README.md</span> 修改後重新產生。
+      此頁面為唯讀參考，資料更新請跟 Claude Code 說套件名稱即可（例如「加入 xxx 套件」「xxx 更新一下版本」），會自動查證並重新發布到同一個連結。
     </p>
-    <details>
-      <summary>如何更新這份表格</summary>
-      <pre class="mono"><code># 查詢單一套件的最新版本、最後發布時間、授權
-npm view &lt;套件名&gt; version time.modified license
-
-# 查詢 GitHub repo 是否已封存、最後一次程式碼異動時間
-curl -s "https://api.github.com/repos/&lt;擁有者&gt;/&lt;repo名稱&gt;" \
-  -H "Accept: application/vnd.github+json" \
-  | node -e "let d='';process.stdin.on('data',c=&gt;d+=c);process.stdin.on('end',()=&gt;{const j=JSON.parse(d);console.log(JSON.stringify({archived:j.archived,pushed_at:j.pushed_at,open_issues:j.open_issues_count}))})"</code></pre>
-    </details>
   </footer>
 </div>
 
