@@ -420,6 +420,7 @@
 
   .package-meta-item {
     margin: 0;
+    min-width: 0;
   }
 
   .package-meta-item dt {
@@ -433,6 +434,7 @@
   .package-meta-item dd {
     margin: 0;
     font-size: 1rem;
+    overflow-wrap: break-word;
   }
 
   .package-details {
@@ -1071,6 +1073,9 @@
       notes: [
         "Font Awesome Free 版本採三種授權組合：程式碼（JS／CSS）為 MIT，字型檔為 SIL OFL 1.1，圖示本身為 CC BY 4.0。CC BY 4.0 要求「標示出處」，官方建議在網站頁尾或關於頁面加註 Font Awesome 連結與授權說明；若團隊網站目前未加註，屬於授權條款未完全遵循，建議跟法務／PM 確認是否需要補上標示，而非直接視為不可使用。",
         "此為 Free 版本，若團隊之後改用 Font Awesome Pro（需付費訂閱）方案，授權條款會不同，屆時需重新查證。",
+        "Font Awesome Free 與 Pro 是兩條並行的產品線，不是「用到某個版本號就會開始收費」——查證官方文件（docs-v6.fontawesome.com）與 Wikipedia 條目確認：Free 版本只提供 Solid、Regular、Brands 三種圖示風格；Pro 版本額外提供 Light、Thin、Duotone、Sharp（含 Sharp Solid／Regular／Light／Thin）、Sharp Duotone 等風格與更多圖示總數。這個 Free／Pro 雙軌制是從 Font Awesome 5（2017-12-07 發布）才開始的，Pro 版本當時公告價格為 120 美元／年；Font Awesome 4 以前的版本全部完全免費、沒有付費方案，現行 Free／Pro 的確切圖示總數與目前售價會隨官方頁面更新，建議查詢當下時間點的 fontawesome.com/plans 頁面為準，不要沿用這裡記錄的歷史數字。",
+        "npm 安裝方式也是分流的：Free 對應 @fortawesome/free-solid-svg-icons、free-regular-svg-icons、free-brands-svg-icons 等公開套件，無需額外認證即可安裝（團隊目前使用的 @fortawesome/fontawesome-free 屬於這一類）；Pro 對應 @fortawesome/pro-solid-svg-icons 等套件，必須先訂閱 Pro 方案取得 Package Token，並在 .npmrc 設定指向官方私有 registry（npm.fontawesome.com）與該 token 才能安裝，一般 npm registry 查不到這些套件、也裝不了。",
+        "團隊若之後有需求想用到 Pro 專屬的圖示風格（例如 Duotone、Sharp、Light、Thin），屬於新增付費訂閱的決策，需要先跟 PM／採購確認預算與授權範圍，不能只憑開發直接申請 Package Token 安裝；若只是想避開付費而暫時不用某些風格，可先評估團隊已在使用 Bootstrap 的搭配優勢，改用官方 Bootstrap Icons（npm 套件 bootstrap-icons，MIT 授權，twbs 官方組織維護，GitHub 最後更新 2026-08-07，維護活躍，完全免費無付費分層）覆蓋常見圖示需求，屬於同源生態系、無需額外授權評估。",
       ],
     },
   ];
