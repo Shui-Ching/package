@@ -562,9 +562,9 @@
       試算表的流程——資料只維護在這份頁面本身，更新後重新發布同一個連結即可。
     </p>
     <dl class="masthead-meta">
-      <div><dt>最後查詢時間</dt><dd>2026-07-28</dd></div>
+      <div><dt>最後查詢時間</dt><dd>2026-08-25</dd></div>
       <div><dt>資料來源</dt><dd>npm registry、GitHub 官方 API、nuxt.com 官方模組清單、jsDelivr API、各套件官方授權頁面</dd></div>
-      <div><dt>收錄範圍</dt><dd>19 個核心套件 ＋ 2 個團隊實際引入的 Nuxt 模組</dd></div>
+      <div><dt>收錄範圍</dt><dd>20 個核心套件 ＋ 2 個團隊實際引入的 Nuxt 模組</dd></div>
     </dl>
 
     <div class="stat-strip" id="stat-strip"></div>
@@ -1051,6 +1051,27 @@
         version: "5.4.4／2024-05-24",
         note: "GitHub 最後更新 2025-12-04，待處理 issue 169（星數 2.5 萬，用量大屬業界標準，核心功能已穩定，非棄置）",
       },
+    },
+    {
+      id: "fontawesome",
+      name: "Font Awesome",
+      homepageUrl: "https://fontawesome.com",
+      description: "圖示字型與 SVG 圖示庫，提供大量向量圖示，支援 webfont／SVG／CDN 多種引入方式",
+      npmName: "@fortawesome/fontawesome-free",
+      latestVersion: "7.3.1",
+      npmLastPublish: "2026-07-15",
+      githubLastUpdate: "2026-07-15",
+      license: "CC BY 4.0（圖示）＋ SIL OFL 1.1（字型）＋ MIT（程式碼），見下方說明",
+      category: "normal",
+      licenseFlag: true,
+      statusLabel: "✅ 正常，活躍維護，授權需留意圖示標示義務（見下方說明）",
+      nuxt: "無官方模組（nuxt-fontawesome、@nuxtjs/fontawesome 皆非 FortAwesome 官方組織維護，且最後發布皆停在 2022 年）",
+      vue: "✅ 有 —— @fortawesome/vue-fontawesome 3.3.3，同屬官方 GitHub org FortAwesome，GitHub 最後更新 2026-07-15，維護活躍",
+      cdn: "可用，跟隨 npm 7.3.1",
+      notes: [
+        "Font Awesome Free 版本採三種授權組合：程式碼（JS／CSS）為 MIT，字型檔為 SIL OFL 1.1，圖示本身為 CC BY 4.0。CC BY 4.0 要求「標示出處」，官方建議在網站頁尾或關於頁面加註 Font Awesome 連結與授權說明；若團隊網站目前未加註，屬於授權條款未完全遵循，建議跟法務／PM 確認是否需要補上標示，而非直接視為不可使用。",
+        "此為 Free 版本，若團隊之後改用 Font Awesome Pro（需付費訂閱）方案，授權條款會不同，屆時需重新查證。",
+      ],
     },
   ];
 
