@@ -647,7 +647,7 @@
     <dl class="masthead-meta">
       <div><dt>最後查詢時間</dt><dd>2026-08-25</dd></div>
       <div><dt>資料來源</dt><dd>npm registry、GitHub 官方 API、nuxt.com 官方模組清單、jsDelivr API、各套件官方授權頁面</dd></div>
-      <div><dt>收錄範圍</dt><dd>21 個核心套件 ＋ 2 個團隊實際引入的 Nuxt 模組</dd></div>
+      <div><dt>收錄範圍</dt><dd>23 個核心套件 ＋ 2 個團隊實際引入的 Nuxt 模組</dd></div>
     </dl>
 
     <div class="stat-strip" id="stat-strip"></div>
@@ -2057,6 +2057,36 @@
         license: "MIT",
         version: "5.4.4／2024-05-24",
         note: "GitHub 最後更新 2025-12-04，待處理 issue 169（星數 2.5 萬，用量大屬業界標準，核心功能已穩定，非棄置）",
+      },
+    },
+    {
+      id: "flexslider",
+      name: "FlexSlider",
+      homepageUrl: "https://github.com/woocommerce/FlexSlider",
+      description: "jQuery 輪播／滑動元件外掛，支援圖片與內容區塊的水平／垂直滑動切換",
+      npmName: "flexslider",
+      latestVersion: "2.7.2",
+      npmLastPublish: "2019-03-07（超過 7 年未發版；npm registry 的 time.modified 顯示 2022-06-18，但那只是 metadata 異動時間，實際版本發布時間查 time.2.7.2 為 2019-03-07）",
+      githubLastUpdate: "2024-08-23（GitHub repo 已封存 archived，不再接受變更）",
+      license: "GPL-2.0",
+      category: "stalled",
+      licenseFlag: true,
+      statusLabel: "⚠️ 已停滯 + 授權疑慮，見下方說明",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件",
+      cdn: "技術上可用，跟隨 npm 2.7.2，但授權與停滯風險不因此改變",
+      notes: [
+        "GitHub woocommerce/FlexSlider repo 已於 API 查證時標示為 archived（封存），最後一次程式碼異動是 2024-08-23，不再接受任何 PR 或修補，屬於明確停滯狀態。",
+        "授權為 GPL-2.0，屬於著作權回饋型（copyleft）授權，與團隊常用的 MIT／BSD 等寬鬆式開源授權性質不同；若團隊修改後散布這個套件的原始碼，理論上需一併以 GPL-2.0 公開，建議連同已停滯的狀態一併評估是否繼續使用。",
+        "npm registry 的 time.modified 顯示 2022-06-18，但那只是套件 metadata 被編輯的時間，不是真正的版本發布時間；查證 time.2.7.2 欄位確認 2.7.2 版實際發布於 2019-03-07，距今已超過 7 年未發版。",
+      ],
+      alternative: {
+        name: "Swiper",
+        url: "https://swiperjs.com/",
+        npmName: "swiper",
+        license: "MIT",
+        version: "14.0.6（GitHub 最後更新 2026-07-24，維護非常活躍）",
+        note: "團隊已在「正常維護中」清單，觸控滑動輪播功能可完全取代 FlexSlider，且無 GPL 授權回饋義務",
       },
     },
     {
