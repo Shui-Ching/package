@@ -566,7 +566,7 @@
     <dl class="masthead-meta">
       <div><dt>最後查詢時間</dt><dd>2026-08-25</dd></div>
       <div><dt>資料來源</dt><dd>npm registry、GitHub 官方 API、nuxt.com 官方模組清單、jsDelivr API、各套件官方授權頁面</dd></div>
-      <div><dt>收錄範圍</dt><dd>20 個核心套件 ＋ 2 個團隊實際引入的 Nuxt 模組</dd></div>
+      <div><dt>收錄範圍</dt><dd>21 個核心套件 ＋ 2 個團隊實際引入的 Nuxt 模組</dd></div>
     </dl>
 
     <div class="stat-strip" id="stat-strip"></div>
@@ -1096,6 +1096,22 @@
       notes: [
         "團隊已在使用 Bootstrap 5，Bootstrap Icons 屬同源生態系，視覺風格與現有元件一致，可優先於 Font Awesome 作為常見圖示的預設來源，無需額外授權評估。",
       ],
+    },
+    {
+      id: "jquery",
+      name: "jQuery",
+      homepageUrl: "https://jquery.com/",
+      description: "DOM 操作、事件處理與 AJAX 請求的 JavaScript 函式庫，簡化跨瀏覽器相容性處理",
+      npmName: "jquery",
+      latestVersion: "4.0.0",
+      npmLastPublish: "2026-01-18",
+      githubLastUpdate: "2026-08-20",
+      license: "MIT",
+      category: "normal",
+      statusLabel: "✅ 正常，jQuery 官方基金會維護",
+      nuxt: "無官方模組",
+      vue: "無官方整合套件（jQuery 直接操作 DOM 的方式與 Vue 的虛擬 DOM 渲染模型衝突，官方與社群皆不建議在 Vue 元件內混用 jQuery）",
+      cdn: "可用，跟隨 npm 4.0.0",
     },
   ];
 
