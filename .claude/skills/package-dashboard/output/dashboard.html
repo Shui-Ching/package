@@ -528,6 +528,42 @@
     color: var(--ink-muted);
   }
 
+  .version-history-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin: 0 0 8px;
+  }
+
+  .version-history-list {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .version-history-item {
+    display: grid;
+    gap: 2px;
+  }
+
+  .version-history-item-head {
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .version-history-item-note {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--ink-muted);
+  }
+
+  .version-history-item-source a {
+    font-size: 1rem;
+  }
+
   .empty-state {
     text-align: center;
     padding: 60px 20px;
@@ -1164,6 +1200,26 @@
       nuxt: "無官方模組",
       vue: "無官方整合套件（jQuery 直接操作 DOM 的方式與 Vue 的虛擬 DOM 渲染模型衝突，官方與社群皆不建議在 Vue 元件內混用 jQuery）",
       cdn: "可用，跟隨 npm 4.0.0",
+      versionHistory: [
+        {
+          version: "4.0.0",
+          date: "2026-01-17",
+          note: "移除 IE 10 以下支援與已棄用 API，原始碼改為 ES modules；另提供比一般版小約 8KB（gzip）的 slim 版本。",
+          sourceUrl: "https://blog.jquery.com/2026/01/17/jquery-4-0-0/",
+        },
+        {
+          version: "3.7.1",
+          date: "2023-08-28",
+          note: "修正 3.6.0 造成的迴歸：Chrome 與 Safari 中 <tr> 元素尺寸被四捨五入的問題；並補回在 3.7.0 移除 Sizzle 時不小心刪掉的 jQuery.find.tokenize 方法。",
+          sourceUrl: "https://blog.jquery.com/2023/08/28/jquery-3-7-1-released-reliable-table-row-dimensions/",
+        },
+        {
+          version: "3.7.0",
+          date: "2023-05-11",
+          note: "",
+          sourceUrl: "https://versionlog.com/jquery/3/",
+        },
+      ],
     },
   ];
 
@@ -1244,6 +1300,21 @@
     return `<div class="notes">${pkg.notes.map((n) => `<p>${escapeHtml(n)}</p>`).join("")}</div>`;
   }
 
+  function renderVersionHistory(pkg) {
+    if (!pkg.versionHistory || !pkg.versionHistory.length) return "";
+    const items = pkg.versionHistory
+      .map(
+        (v) => `
+        <li class="version-history-item">
+          <p class="version-history-item-head"><span class="mono">${escapeHtml(v.version)}</span> ・ ${escapeHtml(v.date)}</p>
+          ${v.note ? `<p class="version-history-item-note">${escapeHtml(v.note)}</p>` : ""}
+          ${v.sourceUrl ? `<p class="version-history-item-source">來源：<a href="${escapeHtml(v.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(v.sourceUrl)}</a></p>` : ""}
+        </li>`
+      )
+      .join("");
+    return `<div class="version-history"><p class="version-history-label">歷史版本</p><ul class="version-history-list">${items}</ul></div>`;
+  }
+
   function renderAlternative(pkg) {
     if (!pkg.alternative) return "";
     const a = pkg.alternative;
@@ -1266,7 +1337,7 @@
       ? '<span class="license-flag">⚠ 授權需留意</span>'
       : "";
 
-    const detailsBody = [renderIntegrationGrid(pkg), renderNotes(pkg), renderAlternative(pkg)]
+    const detailsBody = [renderIntegrationGrid(pkg), renderNotes(pkg), renderVersionHistory(pkg), renderAlternative(pkg)]
       .filter(Boolean)
       .join("");
 
