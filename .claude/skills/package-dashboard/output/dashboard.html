@@ -2500,6 +2500,7 @@
   function renderVersionHistory(pkg) {
     if (!pkg.versionHistory || !pkg.versionHistory.length) return "";
     const items = pkg.versionHistory
+      .slice(0, 3)
       .map(
         (v) => `
         <li class="version-history-item">
