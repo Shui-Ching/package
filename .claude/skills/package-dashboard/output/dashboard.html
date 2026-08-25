@@ -710,6 +710,20 @@
       nuxt: "無官方模組",
       vue: "無官方整合套件（官方 README 僅列出 React／Angular／Laravel 三個官方整合，vue-sweetalert2 屬社群套件）",
       cdn: "可用，跟隨 npm 11.26.25",
+      versionHistory: [
+        {
+          version: "11.26.25",
+          date: "2026-05-23",
+          note: "修復 Firefox 瀏覽器中彈窗圖示（icon）動畫顯示異常的問題，屬於維護性 bug fix。",
+          sourceUrl: "https://github.com/sweetalert2/sweetalert2/releases/tag/v11.26.25",
+        },
+        {
+          version: "11.26.17",
+          date: "2025-12-22",
+          note: "補齊最後一項嚴格型別定義並全面啟用 TypeScript strict mode，屬於型別系統完整度的重要補強。",
+          sourceUrl: "https://github.com/sweetalert2/sweetalert2/releases/tag/v11.26.17",
+        },
+      ],
     },
     {
       id: "bootstrap",
@@ -726,6 +740,20 @@
       nuxt: "無官方模組",
       vue: "無官方整合套件（BootstrapVue／BootstrapVueNext 為獨立社群專案，非 twbs 官方組織維護，且已停止支援 Vue 3）",
       cdn: "可用，跟隨 npm 5.3.8",
+      versionHistory: [
+        {
+          version: "5.3.8",
+          date: "2025-08-25",
+          note: "修正 color-contrast() 函式使其符合 WCAG 2.1 對比度標準、還原先前造成下拉選單焦點異常的變更、修復 spinner 在 flex 容器中變形等問題；官方部落格特別註明這是 5.4.0 推出前的最後一個 5.3.x 修補版本。",
+          sourceUrl: "https://blog.getbootstrap.com/2025/08/25/bootstrap-5-3-8/",
+        },
+        {
+          version: "5.3.0",
+          date: "2023-05-30",
+          note: "重大改版，核心改寫以原生支援深色模式（color modes），新增 color-mode() Sass mixin 可自訂任意數量的色彩模式，是 Bootstrap 5.x 系列的重要里程碑版本。",
+          sourceUrl: "https://blog.getbootstrap.com/2023/05/30/bootstrap-5-3-0/",
+        },
+      ],
     },
     {
       id: "vue-quilly",
@@ -742,6 +770,20 @@
       nuxt: "無官方模組（README 中的「Nuxt Integration」連結僅為 SSR 設定範例專案，未發布成 npm 套件）",
       vue: "不適用（本身即為 Vue 專屬元件庫）",
       cdn: "可用，跟隨 npm 1.1.6",
+      versionHistory: [
+        {
+          version: "1.1.6",
+          date: "2025-12-07",
+          note: "更新依賴套件版本，並修復文件網站上 logo 顯示錯誤，屬於維護性更新。",
+          sourceUrl: "https://github.com/vue-quilly/vue-quilly/releases/tag/v1.1.6",
+        },
+        {
+          version: "1.0.0",
+          date: "2024-04-28",
+          note: "首次正式發布，建立在 Quill v2 與 Vue 3 之上，採用 quill/core 避免載入完整 Quill 模組、同時支援 HTML 與 Quill Delta 兩種資料格式，並內建 TypeScript 型別支援。",
+          sourceUrl: "https://github.com/vue-quilly/vue-quilly/releases/tag/v1.0.0",
+        },
+      ],
     },
     {
       id: "quill",
@@ -762,6 +804,20 @@
         "Quill npm 最後一次發版是 2024-11-30（近 1 年 8 個月未發版），單看這個數字容易誤判為停滯套件。但查證 GitHub slab/quill repo 發現最後一次程式碼異動是 2025-07-25，且 repo 未封存，代表官方仍持續開發，只是尚未把累積的變更打包發布新版，與 AOS、Flatpickr 那種「GitHub 也一起停滯」的情況不同，建議列為正常維護但留意，而非直接歸類已停滯。",
         "Quill 本身授權為 BSD-3-Clause，與 Vue Quilly 的 MIT 不同，但兩者都是標準寬鬆式開源授權，商業使用無限制，授權層面沒有疑慮，僅供掃描工具比對授權欄位時參考。",
       ],
+      versionHistory: [
+        {
+          version: "2.0.3",
+          date: "2024-11-30",
+          note: "修復 Delta、AttributeMap 等物件未正確匯出的問題，並修正複製貼上時連續空白字元的處理錯誤。",
+          sourceUrl: "https://github.com/slab/quill/releases/tag/v2.0.3",
+        },
+        {
+          version: "2.0.0",
+          date: "2024-04-17",
+          note: "重大改版，全面遷移至 TypeScript 並提供官方型別宣告、轉為標準 ESM 套件以支援 tree-shaking、新增巢狀 Quill 編輯器支援，並改善 IME 輸入法與拼字檢查器相容性。",
+          sourceUrl: "https://github.com/slab/quill/releases/tag/v2.0.0",
+        },
+      ],
     },
     {
       id: "swiper",
@@ -778,6 +834,20 @@
       nuxt: "無官方模組（nuxt.com 上架的 nuxt-swiper 官方頁面明確標示為第三方 @cpreston321 維護；npm 最新 2.0.2，2026-05-18 發布，GitHub 最後更新 2026-07-27，維護活躍）",
       vue: "已內建於核心套件（swiper/vue entry point 為官方文件指定用法，非獨立套件，版本與核心套件 14.0.6 一致）",
       cdn: "可用，跟隨 npm 14.0.6",
+      versionHistory: [
+        {
+          version: "14.0.0",
+          date: "2026-06-26",
+          note: "整個原始碼改用 TypeScript 從頭重寫，型別直接由執行期原始碼產生、不再手動維護 .d.ts，並將支援的瀏覽器基準線提高到近兩年的常青瀏覽器；從 v12 升級不需要改任何程式碼。",
+          sourceUrl: "https://github.com/nolimits4web/swiper/releases/tag/v14.0.0",
+        },
+        {
+          version: "12.0.0",
+          date: "2025-09-11",
+          note: "導覽按鈕圖示從字型改為 SVG，並移除 LESS／SCSS 原始碼、只保留 CSS，屬於破壞性變更；同時修正 slidesOffsetBefore／slidesOffsetAfter 與 centeredSlides、loop 併用時的多個定位錯誤。",
+          sourceUrl: "https://github.com/nolimits4web/swiper/releases/tag/v12.0.0",
+        },
+      ],
     },
     {
       id: "nuxt-swiper",
@@ -812,6 +882,20 @@
       notes: [
         "GSAP 官方授權頁面（gsap.com/licensing/）說明目前所有外掛（含過去付費的 SplitText、MorphSVG）皆已納入免費標準授權，商業用途、SaaS 產品都涵蓋在內。唯一限制是不能用來開發與 Webflow 競爭的視覺化動畫建構工具，與一般前端專案使用情境無關。若原碼掃描工具因授權文字非標準 SPDX 格式而標記為風險，屬於誤報，可備註說明。",
       ],
+      versionHistory: [
+        {
+          version: "3.15.0",
+          date: "2026-04-13",
+          note: "新增 easeReverse 屬性，可為動畫倒放時單獨指定不同的緩動曲線（取代已棄用的 yoyoEase），並修正 ScrollTrigger 在 gsap.context()／React useGSAP() 內的清理問題。",
+          sourceUrl: "https://gsap.com/blog/3-15",
+        },
+        {
+          version: "3.13.0",
+          date: "2025-04-29",
+          note: "在 Webflow 贊助下 GSAP 全面免費，包含原本限定付費會員的 SplitText、MorphSVG 等外掛也開放商用；同時 SplitText 整個重寫，體積縮小約 50% 並新增 14 項功能。",
+          sourceUrl: "https://gsap.com/blog/3-13/",
+        },
+      ],
     },
     {
       id: "echarts",
@@ -828,6 +912,20 @@
       nuxt: "無官方模組（nuxt-echarts 為個人維護，非 apache／ecomfe 組織）",
       vue: "✅ 有 —— vue-echarts 8.0.1（GitHub ecomfe/vue-echarts，apache/echarts 官方 README 直接連結背書；GitHub 最後更新 2026-07-24）",
       cdn: "可用，echarts、vue-echarts 皆跟隨各自 npm 版本",
+      versionHistory: [
+        {
+          version: "6.1.0",
+          date: "2026-05-19",
+          note: "全面強化座標軸功能，新增 dataMin／dataMax 讓座標軸範圍自動取整，並讓所有座標軸類型在 bar、candlestick 等系列都能避免資料被裁切，另修正多項 tooltip 與 dataZoom 的錯誤。",
+          sourceUrl: "https://github.com/apache/echarts/releases/tag/6.1.0",
+        },
+        {
+          version: "6.0.0",
+          date: "2025-07-30",
+          note: "大改版：全新預設主題、新增 chord（弦圖）系列、新增 matrix 座標系統可在矩陣／日曆格內宣告式排版，並支援主題動態切換，屬於視覺與版面上的破壞性變更。",
+          sourceUrl: "https://github.com/apache/echarts/releases/tag/6.0.0",
+        },
+      ],
     },
     {
       id: "fullcalendar",
@@ -847,6 +945,20 @@
       notes: [
         "@fullcalendar/vue3 的 npm 最新版本是 7.0.2，發布時間與核心套件 fullcalendar 一致（約 2026-07-24），但其獨立支援 repo（fullcalendar/fullcalendar-vue）GitHub 上最新的 git tag 只到 v6.1.21。研判是 FullCalendar 團隊已將 @fullcalendar/vue3 的版本號同步進核心 monorepo 的 7.x 版本線一起發布，但這個獨立 repo 本身沒有另外打上對應的 v7 git tag。實務上以 npm 上的版本號 7.0.2 為準，但若團隊之後要去 GitHub 對照原始碼或回報 issue，需要知道 tag 顯示的版本會落後、屬正常現象，不代表套件本身沒更新。",
       ],
+      versionHistory: [
+        {
+          version: "7.0.0",
+          date: "2026-06-19",
+          note: "推出全新主題系統（樣式抽離為外掛，需自行引入樣式表）、簡化 DOM 結構為 flexbox，並要求 React 17+／Vue 3 專用／Angular 16-21，屬於重大破壞性改版。",
+          sourceUrl: "https://github.com/fullcalendar/fullcalendar/releases/tag/v7.0.0",
+        },
+        {
+          version: "6.1.0",
+          date: "2023-01-30",
+          note: "新增 multiMonth／dayGridYear 檢視，可一次顯示多個月曆並支援自訂欄數與最小寬度，同時修正 React 拖放時事件重複、Shadow DOM 樣式套用錯誤等問題。",
+          sourceUrl: "https://github.com/fullcalendar/fullcalendar/releases/tag/v6.1.0",
+        },
+      ],
     },
     {
       id: "glightbox",
@@ -863,6 +975,20 @@
       nuxt: "無官方模組",
       vue: "無官方整合套件",
       cdn: "可用，跟隨 npm 3.3.1",
+      versionHistory: [
+        {
+          version: "3.3.1",
+          date: "2025-01-21",
+          note: "修正計算 slide 最大高度時，若 slide trigger node 為可選（optional）時的處理邏輯；並改善 types.d.ts，將部分參數標記為 optional。",
+          sourceUrl: "https://github.com/biati-digital/glightbox/blob/master/CHANGELOG.md",
+        },
+        {
+          version: "3.0.0",
+          date: "2020-06-22",
+          note: "重大改版：新增可存取影音播放器實例與動態管理 slide 的方法（slidePlayerPause／slidePlayerPlay）、加入無障礙（Accessibility）特性、觸控裝置全面支援滑動導覽，並修正 destroy() 方法的錯誤。",
+          sourceUrl: "https://github.com/biati-digital/glightbox/blob/master/CHANGELOG.md",
+        },
+      ],
     },
     {
       id: "shufflejs",
@@ -879,6 +1005,20 @@
       nuxt: "無官方模組",
       vue: "無官方整合套件（@dmstr/vue-shufflejs-plugin 為第三方 dmstr 維護，非作者 glen-cheney 本人，且宣告 Bootstrap 為 peerDependency）",
       cdn: "可用，跟隨 npm 7.0.0",
+      versionHistory: [
+        {
+          version: "7.0.0",
+          date: "2026-02-13",
+          note: "改為僅支援 ESM（ESM-only），原始碼改寫為 TypeScript，建置工具換成 tsdown（target 設為 ES2024），並改用 oxlint 做靜態檢查、Vitest browser mode 做測試。",
+          sourceUrl: "https://shuffle.js.org/docs/changelog",
+        },
+        {
+          version: "6.0.0",
+          date: "2022-02-15",
+          note: "破壞性變更版本：移除 IE 11 支援、移除拼字有誤的 delimeter 選項，並移除 matches-selector 相依套件。",
+          sourceUrl: "https://shuffle.js.org/docs/changelog",
+        },
+      ],
     },
     {
       id: "aos",
@@ -895,6 +1035,20 @@
       nuxt: "無官方模組（nuxt-aos 為第三方維護）",
       vue: "無官方整合套件（aos-vue 為第三方維護）",
       cdn: "可用，跟隨 npm 2.3.4",
+      versionHistory: [
+        {
+          version: "2.3.4",
+          date: "2018-10-03",
+          note: "修正在不支援 MutationObserver 的瀏覽器環境下停用該監聽邏輯，避免執行時期報錯。",
+          sourceUrl: "https://github.com/michalsnik/aos/pull/405",
+        },
+        {
+          version: "2.3.1",
+          date: "2018-06-21",
+          note: "修正伺服器端渲染（SSR）相容性問題，把原本在全域範圍存取的 window／document 等瀏覽器物件搬移到函式內部，避免 SSR 環境出現「window is not defined」錯誤。",
+          sourceUrl: "https://github.com/michalsnik/aos/pull/349",
+        },
+      ],
       alternative: {
         name: "GSAP ScrollTrigger",
         url: "https://gsap.com/docs/v3/Plugins/ScrollTrigger/",
@@ -919,6 +1073,20 @@
       nuxt: "無官方模組（@samk-dev/nuxt-vcalendar 為第三方維護，非作者 nathanreyes 本人；維護狀態與核心套件一致停滯）",
       vue: "不適用（本身即為 Vue 專屬元件庫）",
       cdn: "可用，跟隨 npm 2.4.2",
+      versionHistory: [
+        {
+          version: "2.4.2",
+          date: "2023-10-13",
+          note: "修正開啟 popover 後直接切換月份會導致 day.attributes 為 undefined、觸發 Object.values 執行期錯誤而整個元件崩潰的 bug。",
+          sourceUrl: "https://github.com/nathanreyes/v-calendar/commit/12160e2",
+        },
+        {
+          version: "2.4.0",
+          date: "2022-01-30",
+          note: "新增 valid-hours 屬性可限制可選擇的時段，並修正切換日期模式時的邊界案例，以及搭配 Tailwind reset 樣式時 time picker 會出現雙重箭頭的顯示異常。",
+          sourceUrl: "https://v2.vcalendar.io/changelog/v2.0.html",
+        },
+      ],
       alternative: {
         name: "@vuepic/vue-datepicker",
         url: "https://github.com/Vuepic/vue-datepicker",
@@ -958,6 +1126,20 @@
       nuxt: "無官方模組",
       vue: "無官方整合套件",
       cdn: "可用，跟隨 npm 1.2.0",
+      versionHistory: [
+        {
+          version: "1.2.0",
+          date: "2024-06-08",
+          note: "因應 jQuery 3.7.1+ 的相容性問題更新已棄用函式，並新增 allowHTMLInStatusIndicator、allowHTMLInTemplate 兩個選項，預設關閉載入指示器與圖片標題等欄位中的 HTML 解析以修補資安疑慮。",
+          sourceUrl: "https://github.com/dimsemenov/Magnific-Popup/releases/tag/1.2.0",
+        },
+        {
+          version: "1.1.0",
+          date: "2016-02-20",
+          note: "移除內建 fast-click 支援（改用 touch-action）、終止 IE7 支援、對取代 img 元素時的屬性做 sanitize 處理，並移除 box-sizing／box-shadow 的瀏覽器前綴。",
+          sourceUrl: "https://github.com/dimsemenov/Magnific-Popup/releases/tag/1.1.0",
+        },
+      ],
       alternative: {
         name: "GLightbox",
         url: "https://biati-digital.github.io/glightbox/",
@@ -984,6 +1166,21 @@
       cdn: "可用，跟隨 npm 2.6.0",
       notes: [
         "查證時發現一個常見的 EasyZoom 替代方案 drift-zoom 已改名搬到 strawdynamics/drift，最後一次 GitHub 更新是 2024-06-28，距今超過 2 年，本身也屬於停滯狀態，因此未列入下方推薦選項。",
+        "EasyZoom 官方 repo 沒有使用 GitHub Releases 功能、也沒有 CHANGELOG，下方歷史版本紀錄的來源連結改用官方 repo 的 PR／commit 比對頁面（仍是官方一手資料，只是不是標準 Releases 頁）。",
+      ],
+      versionHistory: [
+        {
+          version: "2.6.0",
+          date: "2022-12-30",
+          note: "修正縮放平移時用 top/left 定位造成的 Cumulative Layout Shift（版面位移）問題，改用 transform: translate() 定位並保留舊瀏覽器的相容性判斷。",
+          sourceUrl: "https://github.com/i-like-robots/EasyZoom/pull/136",
+        },
+        {
+          version: "2.5.1",
+          date: "2018-10-03",
+          note: "修正目標元素有 padding／border 時游標位置計算錯誤的問題，改用元素外部寬度計算游標座標。",
+          sourceUrl: "https://github.com/i-like-robots/EasyZoom/compare/2.5.0...v2.5.1",
+        },
       ],
       alternative: {
         name: "medium-zoom",
@@ -1017,6 +1214,20 @@
         "npm 發布時間修正：真正發布時間是 2020-09-07（原表誤植為 2022-11-18，兩者相差超過 2 年，代表這個套件已停滯超過 5 年而非原本估計的 3 年多）。",
         "建議：安裝時鎖定目前 npm 上的 4.1.1（MIT）版本，並在下次此表格例行更新查核時，特別留意授權欄位是否隨新版發布而變動。",
       ],
+      versionHistory: [
+        {
+          version: "4.1.1",
+          date: "2020-09-07",
+          note: "移除編譯後檔案開頭多餘的空白字元，屬於小型修正版本。",
+          sourceUrl: "https://github.com/animate-css/animate.css/releases/tag/4.1.1",
+        },
+        {
+          version: "4.0.0",
+          date: "2020-05-07",
+          note: "重大改版：新增多種方向性動畫（ShakeY、fadeIn/fadeOut 方向變體、lightSpeed、backOut 等）、所有 class 加上 animate__ 前綴以避免命名衝突、新增工具類別並改用 CSS 自訂屬性控制動畫參數，屬於破壞性變更（需改寫既有 class 名稱）。",
+          sourceUrl: "https://github.com/animate-css/animate.css/releases/tag/4.0.0",
+        },
+      ],
       alternative: {
         name: "短期：鎖定現有 npm 4.1.1（MIT）版本；中長期：改用團隊已導入的 GSAP 改寫動畫觸發邏輯",
         url: "https://gsap.com/",
@@ -1043,6 +1254,20 @@
       cdn: "可用，跟隨 npm 4.6.13",
       notes: [
         "npm 發布時間修正：真正發布時間是 2022-04-14（原表誤植為 2022-06-18，相差約 2 個月，停滯年數估計無實質影響）。",
+      ],
+      versionHistory: [
+        {
+          version: "4.6.13",
+          date: "2022-04-14",
+          note: "修正 monthSelect 外掛不觸發 change 事件、部分情境下週數計算錯誤，以及邊界情境下誤觸發 change 事件的問題。",
+          sourceUrl: "https://github.com/flatpickr/flatpickr/releases/tag/v4.6.13",
+        },
+        {
+          version: "4.6.10",
+          date: "2022-03-06",
+          note: "大型維護版本：新增時區 Z／GMT 解析支援、修正 Shadow DOM 內鍵盤操作失效與 Safari 定位錯誤、清除事件監聽造成的記憶體洩漏，並新增多國語系與無障礙焦點修正。",
+          sourceUrl: "https://github.com/flatpickr/flatpickr/releases/tag/v4.6.10",
+        },
       ],
       alternative: {
         name: "vanilla-calendar-pro 或 cally",
@@ -1072,6 +1297,20 @@
         "最後一次 npm 發版為 2024-03-05（1.19.0），GitHub main 分支最後一次 commit 也是同一天，屬於「npm 與原始碼一起停滯」的型態。未解決 issue 僅 26 個，但 2026 年仍有新 issue 進來（#158 觸控板縮放連帶觸發整頁縮放、#160 pinch zoom 上限），社群針對 #158 送出的修正 PR #159 自 2026-02-26 起未被合併也未獲回覆，判定維護者已停止投入。此套件 npm 月下載量仍有約 27.8 萬次，屬於「使用量高但已無人維護」的類型。",
         "風險輪廓與 AOS、Flatpickr 不同：它沒有任何 runtime dependency，僅宣告 peerDependency vue: ^3.0.0，停滯不會帶進 transitive 相依的未修補漏洞；授權為標準 MIT，npm 與 GitHub 宣告一致，法遵層面無疑慮。實際暴露點是 Vue 3 後續 minor 版本的相容性未經測試，以及瀏覽器行為變更造成的互動 bug 不會再修。",
         "Vue 2 專案若使用 vue2 dist-tag 的 0.23.0（2023-02-28 發布），停滯時間更長，加上 Vue 2 官方支援已於 2023-12-31 結束，建議直接視為不可續用。",
+      ],
+      versionHistory: [
+        {
+          version: "1.19.0",
+          date: "2024-03-05",
+          note: "修復關閉燈箱後 body 的 overflow 鎖定沒有正確解除的問題（issue #147）。",
+          sourceUrl: "https://github.com/XiongAmao/vue-easy-lightbox/releases/tag/v1.19.0",
+        },
+        {
+          version: "1.6.0",
+          date: "2022-07-15",
+          note: "破壞性變更：移除 ES5 打包檔，同時新增無障礙（A11y）屬性與 TypeScript emits 型別宣告。",
+          sourceUrl: "https://github.com/XiongAmao/vue-easy-lightbox/releases/tag/v1.6.0",
+        },
       ],
       alternative: {
         name: "GLightbox",
@@ -1104,6 +1343,20 @@
         "綜合兩點：這是「已停滯」與「授權疑慮」同時成立的套件，風險層級高於單純授權疑慮但仍活躍維護的 Fancybox，也高於單純停滯但授權單純的 AOS 等套件。",
         "查證時另比對常見的同類替代方案 Muuri（star 數 10,943）：GitHub 顯示最後 push 時間為 2024-05-25，但 npm 最新版本 0.9.5 實際發布於 2021-07-09，同樣超過 5 年未發版，與 Animate.css 案例相同屬於「GitHub 時間戳記比 npm 版本新，但核心功能其實已久未更新」的陷阱，因此未列入替代方案建議選項。",
       ],
+      versionHistory: [
+        {
+          version: "3.0.6",
+          date: "2018-04-06",
+          note: "目前最新版，升級內部排版引擎 Outlayer 至 2.1.1（修正定位精準度問題），並更新 get-size、fizzy-ui-utils 相依套件版本。",
+          sourceUrl: "https://github.com/metafizzy/isotope/releases/tag/v3.0.6",
+        },
+        {
+          version: "3.0.0",
+          date: "2016-05-05",
+          note: "重大改版：移除 IE8／9 支援，多個參數改名（如 isOriginLeft → originLeft），新增 stagger 交錯過場選項，屬破壞性變更。",
+          sourceUrl: "https://github.com/metafizzy/isotope/releases/tag/v3.0.0",
+        },
+      ],
       alternative: {
         name: "Shuffle.js",
         url: "https://shuffle.js.org",
@@ -1132,6 +1385,20 @@
       notes: [
         "官方授權頁面（fancyapps.com/license/）明確寫明：每個專案無論類型、位置或法律形式，都需要有效的付費授權；不可在開源專案中使用；商業用途、公司內網、SaaS 產品皆需購買「商業授權」或「商業擴展授權」。",
         "若團隊目前是直接引用但尚未購買授權，屬於實際法遵風險，建議優先跟法務／PM 確認授權狀態。",
+      ],
+      versionHistory: [
+        {
+          version: "6.1.14",
+          date: "2026-04-29",
+          note: "修復圖片直式旋轉後無法正確拖曳、修正特定情況下的 Panzoom 釘選定位問題，並為 Carousel 新增外部控制支援。",
+          sourceUrl: "https://github.com/fancyapps/ui/blob/main/CHANGELOG.md",
+        },
+        {
+          version: "6.0.0",
+          date: "2025-06-14",
+          note: "重大改版：專案多個層面全面重寫，需參照官方升級指南（Upgrading notes）處理相容性。",
+          sourceUrl: "https://github.com/fancyapps/ui/blob/main/CHANGELOG.md",
+        },
       ],
       alternative: {
         name: "優先評估改用 GLightbox；進階手勢需求改用 PhotoSwipe",
@@ -1165,6 +1432,20 @@
         "npm 安裝方式也是分流的：Free 對應 @fortawesome/free-solid-svg-icons、free-regular-svg-icons、free-brands-svg-icons 等公開套件，無需額外認證即可安裝（團隊目前使用的 @fortawesome/fontawesome-free 屬於這一類）；Pro 對應 @fortawesome/pro-solid-svg-icons 等套件，必須先訂閱 Pro 方案取得 Package Token，並在 .npmrc 設定指向官方私有 registry（npm.fontawesome.com）與該 token 才能安裝，一般 npm registry 查不到這些套件、也裝不了。",
         "團隊若之後有需求想用到 Pro 專屬的圖示風格（例如 Duotone、Sharp、Light、Thin），屬於新增付費訂閱的決策，需要先跟 PM／採購確認預算與授權範圍，不能只憑開發直接申請 Package Token 安裝；若只是想避開付費而暫時不用某些風格，可先評估團隊已在使用 Bootstrap 的搭配優勢，改用官方 Bootstrap Icons（npm 套件 bootstrap-icons，MIT 授權，twbs 官方組織維護，GitHub 最後更新 2026-08-07，維護活躍，完全免費無付費分層）覆蓋常見圖示需求，屬於同源生態系、無需額外授權評估。",
       ],
+      versionHistory: [
+        {
+          version: "7.3.1",
+          date: "2026-07-15",
+          note: "7.3 系列版本，新增 Pixel、Mosaic、Vellum 三款 Pro+ 圖示包與 Slab Duo／Slab Press Duo 樣式，並加入 fa-wag、fa-swing、fa-buzz 等六款新動畫效果。",
+          sourceUrl: "https://blog.fontawesome.com/font-awesome-7-3-release/",
+        },
+        {
+          version: "7.0.0",
+          date: "2025-07-22",
+          note: "重大改版：正式停止支援 jQuery 與 Less CSS，改用 Dart Sass／現代 SCSS 語法，圖示預設改為裝飾性（自動隱藏於螢幕閱讀器）並固定寬度，webfont 僅提供 .woff2 格式，多個圖示被重新命名或整合。",
+          sourceUrl: "https://docs.fontawesome.com/upgrade/whats-changed/",
+        },
+      ],
     },
     {
       id: "bootstrap-icons",
@@ -1183,6 +1464,20 @@
       cdn: "可用，跟隨 npm 1.13.1",
       notes: [
         "團隊已在使用 Bootstrap 5，Bootstrap Icons 屬同源生態系，視覺風格與現有元件一致，可優先於 Font Awesome 作為常見圖示的預設來源，無需額外授權評估。",
+      ],
+      versionHistory: [
+        {
+          version: "1.13.1",
+          date: "2025-05-09",
+          note: "小型修補版本，修正官方文件站內搜尋功能的問題。",
+          sourceUrl: "https://github.com/twbs/icons/releases/tag/v1.13.1",
+        },
+        {
+          version: "1.13.0",
+          date: "2025-05-09",
+          note: "調整圖示分類一致性、修正 Vite 與 Parcel 建置環境下的相對路徑文件說明，並新增一批圖示。",
+          sourceUrl: "https://github.com/twbs/icons/releases/tag/v1.13.0",
+        },
       ],
     },
     {
